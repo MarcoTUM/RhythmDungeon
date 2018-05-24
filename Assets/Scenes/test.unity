@@ -108,46 +108,54 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &212123308
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 212123311}
-  - component: {fileID: 212123310}
-  m_Layer: 0
-  m_Name: Kinect
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &212123310
+--- !u!114 &212123310 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 212123308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_PrefabParentObject: {fileID: 114410917514067824, guid: fbbe7c71a27e50040b90abf0471093c4,
+    type: 2}
+  m_PrefabInternal: {fileID: 334156376}
   m_Script: {fileID: 11500000, guid: 9957bf63bc349494ebe4f1f36b4fd162, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &212123311
-Transform:
+--- !u!1001 &334156376
+Prefab:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 212123308}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.91987944, y: 1.1483842, z: 1.2225505}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4951096361286020, guid: fbbe7c71a27e50040b90abf0471093c4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.91987944
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951096361286020, guid: fbbe7c71a27e50040b90abf0471093c4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.1483842
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951096361286020, guid: fbbe7c71a27e50040b90abf0471093c4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.2225505
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951096361286020, guid: fbbe7c71a27e50040b90abf0471093c4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951096361286020, guid: fbbe7c71a27e50040b90abf0471093c4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951096361286020, guid: fbbe7c71a27e50040b90abf0471093c4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951096361286020, guid: fbbe7c71a27e50040b90abf0471093c4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951096361286020, guid: fbbe7c71a27e50040b90abf0471093c4, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: fbbe7c71a27e50040b90abf0471093c4, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &706169404
 GameObject:
   m_ObjectHideFlags: 0
