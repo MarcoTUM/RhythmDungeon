@@ -6,6 +6,8 @@ TagManager:
   tags:
   - RhythmIndicator
   - BubbleController
+  - Wall
+  - Floor
   layers:
   - Default
   - TransparentFX
