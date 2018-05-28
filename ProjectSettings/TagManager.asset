@@ -8,6 +8,12 @@ TagManager:
   - BubbleController
   - Wall
   - Floor
+  - Empty
+  - Goal
+  - Start
+  - Key
+  - Door
+  - DoorOpen
   layers:
   - Default
   - TransparentFX

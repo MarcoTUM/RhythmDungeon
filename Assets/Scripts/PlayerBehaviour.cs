@@ -5,13 +5,16 @@ using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour {
 
     private Dictionary<Direction, FieldType> _nextField;
-    public GameObject StartTile;
+
 	// Use this for initialization
 	void Start ()
     {
-
         _nextField = new Dictionary<Direction, FieldType>();
-        this.transform.position = StartTile.transform.position;
+        foreach (Direction d in System.Enum.GetValues(typeof(Direction)))
+            _nextField.Add(d, FieldType.Floor);
+        GameObject startTile = GameObject.FindGameObjectWithTag("Start");
+        if(startTile != null)
+            this.transform.position = startTile.transform.position;
 
     }
 
@@ -37,5 +40,14 @@ public class PlayerBehaviour : MonoBehaviour {
     public void setField(Direction dir, FieldType val)
     {
         _nextField[dir] = val;
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0, 1, 0, 0.5f);
+        GameObject startTile = GameObject.FindGameObjectWithTag("Start");
+        if (startTile != null) {
+            Gizmos.DrawCube(startTile.transform.position, new Vector3(startTile.transform.localScale.x, startTile.transform.localScale.y, 0));
+        }
     }
 }
