@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour {
 
-    private Dictionary<Direction, FieldType> _nextField;
+    public Dictionary<Direction, FieldType> _nextField;
 
 	// Use this for initialization
 	void Start ()
@@ -20,6 +20,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        /*
         if (Input.GetKeyDown("down") && _nextField[Direction.Down] != FieldType.Wall) {
             transform.Translate(Vector3.down * GameModel.Instance.Step);
         }
@@ -35,6 +36,7 @@ public class PlayerBehaviour : MonoBehaviour {
         {
             transform.Translate(Vector3.right * GameModel.Instance.Step);
         }
+         */
     }
 
     public void setField(Direction dir, FieldType val)
