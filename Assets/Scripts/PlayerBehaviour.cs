@@ -4,8 +4,7 @@ using UnityEngine;
 
 
 public class PlayerBehaviour : MonoBehaviour {
-
-<<<<<<< HEAD
+    
     
 
     //Variables for animation
@@ -15,10 +14,8 @@ public class PlayerBehaviour : MonoBehaviour {
 
 
 
-    private Dictionary<Direction, FieldType> _nextField;
-=======
+  
     public Dictionary<Direction, FieldType> _nextField;
->>>>>>> 339e0e2c153009646c47ab12cc176c3d51ff42f6
 
 	// Use this for initialization
 	void Start ()
@@ -34,42 +31,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-<<<<<<< HEAD
-        if (animator.GetBool("Standing"))
-=======
-        /*
-        if (Input.GetKeyDown("down") && _nextField[Direction.Down] != FieldType.Wall) {
-            transform.Translate(Vector3.down * GameModel.Instance.Step);
-        }
-        else if (Input.GetKeyDown("left") && _nextField[Direction.Left] != FieldType.Wall)
-        {
-            transform.Translate(Vector3.left * GameModel.Instance.Step);
-        }
-        else if (Input.GetKeyDown("up") && _nextField[Direction.Up] != FieldType.Wall)
->>>>>>> 339e0e2c153009646c47ab12cc176c3d51ff42f6
-        {
-            if (Input.GetKeyDown("down") && _nextField[Direction.Down] != FieldType.Wall)
-            {
-                MovePlayer("down");
-                //transform.Translate(Vector3.down * GameModel.Instance.Step);
-            }
-            else if (Input.GetKeyDown("left") && _nextField[Direction.Left] != FieldType.Wall)
-            {
-                MovePlayer("left");
-                //transform.Translate(Vector3.left * GameModel.Instance.Step);
-            }
-            else if (Input.GetKeyDown("up") && _nextField[Direction.Up] != FieldType.Wall)
-            {
-                MovePlayer("up");
-                //transform.Translate(Vector3.up * GameModel.Instance.Step);
-            }
-            else if (Input.GetKeyDown("right") && _nextField[Direction.Right] != FieldType.Wall)
-            {
-                MovePlayer("right");
-                //transform.Translate(Vector3.right * GameModel.Instance.Step);
-            }
-        }
-        
+                
     }
 
 
@@ -109,7 +71,7 @@ public class PlayerBehaviour : MonoBehaviour {
                 Debug.LogError("Something went wrong in switch case statement in PlayerBehaviour");
                 break;
         }
-         */
+
     }
 
     public void setField(Direction dir, FieldType val)
