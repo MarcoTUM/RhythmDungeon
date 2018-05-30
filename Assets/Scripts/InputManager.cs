@@ -13,7 +13,7 @@ public class InputManager : MonoBehaviour
     void Start()
     {
         m_playerBehavior = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehaviour>();
-        m_rhythmIdicator = GameObject.FindGameObjectWithTag("Indicator").GetComponent<RhythmIndicator>();
+        m_rhythmIdicator = GameObject.FindGameObjectWithTag("RhythmIndicator").GetComponent<RhythmIndicator>();
     }
 
     // Update is called once per frame

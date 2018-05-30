@@ -12,11 +12,12 @@ public class RhythmIndicator : MonoBehaviour
     public Status status;
     public float m_beatPerSecond;
     public float m_reactionTime;
-    public EnemyController enemyCont;
+    private EnemyController enemyCont;
 
     // Use this for initialization
     void Start()
     {
+        enemyCont = GameObject.FindGameObjectWithTag("EnemyController").GetComponent<EnemyController>();
         status = Status.red;
         m_continueCourutine = true;
         m_coroutine = WaitOnBeat();

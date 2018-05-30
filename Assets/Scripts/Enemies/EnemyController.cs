@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
-    public GameObject Level;
+    private GameObject Level;
     Enemy[] enemies;
 	// Use this for initialization
 	void Start () {
+        Level = GameObject.FindGameObjectWithTag("Level");
         enemies = Level.GetComponentsInChildren<Enemy>();
 	}
 	
