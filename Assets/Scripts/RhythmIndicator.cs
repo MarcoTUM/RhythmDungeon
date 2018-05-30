@@ -25,12 +25,12 @@ public class RhythmIndicator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     IEnumerator WaitOnBeat()
     {
-        if(m_beatPerSecond <= m_reactionTime)
+        if (m_beatPerSecond <= m_reactionTime)
         {
             Debug.Log("Error: reactionTime is bigger than beat!");
         }

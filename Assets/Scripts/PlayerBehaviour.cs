@@ -37,6 +37,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
     public void MovePlayer(string direction)
     {
+        Debug.Log("N");
         animator.SetBool("Standing", false);
         switch(direction){
             case "up":
