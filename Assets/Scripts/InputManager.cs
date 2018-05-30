@@ -6,14 +6,14 @@ public class InputManager : MonoBehaviour
 {
 
     public ParticleSystem m_psHitTheBeat;
-    public RhythmIndicator m_rhythmIdicator;
-
-    public PlayerBehaviour m_playerBehavior;
+    private RhythmIndicator m_rhythmIdicator;
+    private PlayerBehaviour m_playerBehavior;
 
     // Use this for initialization
     void Start()
     {
         m_playerBehavior = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehaviour>();
+        m_rhythmIdicator = GameObject.FindGameObjectWithTag("Indicator").GetComponent<RhythmIndicator>();
     }
 
     // Update is called once per frame

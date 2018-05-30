@@ -14,6 +14,7 @@ TagManager:
   - Key
   - Door
   - DoorOpen
+  - Indicator
   layers:
   - Default
   - TransparentFX
