@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -680,6 +680,26 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: -10
       objectReference: {fileID: 0}
+    - target: {fileID: 114124593757477788, guid: 520be25ab3ab93049a5a4d9047733f1a,
+        type: 2}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1927673175}
+    - target: {fileID: 114124593757477788, guid: 520be25ab3ab93049a5a4d9047733f1a,
+        type: 2}
+      propertyPath: speed
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 114124593757477788, guid: 520be25ab3ab93049a5a4d9047733f1a,
+        type: 2}
+      propertyPath: moveOffset
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 114124593757477788, guid: 520be25ab3ab93049a5a4d9047733f1a,
+        type: 2}
+      propertyPath: delay
+      value: 0.02
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 520be25ab3ab93049a5a4d9047733f1a, type: 2}
   m_IsPrefabParent: 0
@@ -947,3 +967,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1927673174 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1283480733510936, guid: 520be25ab3ab93049a5a4d9047733f1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 688826744}
+--- !u!95 &1927673175
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1927673174}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1617f3b064cee3040bbd637226bc0106, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
