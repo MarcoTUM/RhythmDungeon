@@ -12,6 +12,7 @@ public class RhythmIndicator : MonoBehaviour
     public Status status;
     public float m_beatPerSecond;
     public float m_reactionTime;
+    public EnemyController enemyCont;
 
     // Use this for initialization
     void Start()
@@ -41,10 +42,11 @@ public class RhythmIndicator : MonoBehaviour
                 status = Status.red;
                 GetComponent<SpriteRenderer>().color = new Color(1, 0, 0);
                 yield return new WaitForSecondsRealtime(m_beatPerSecond);
-
+                
                 status = Status.green;
                 GetComponent<SpriteRenderer>().color = new Color(0, 1, 0);
                 yield return new WaitForSecondsRealtime(m_reactionTime);
+                enemyCont.ExecuteActions();
             }
         }
     }
