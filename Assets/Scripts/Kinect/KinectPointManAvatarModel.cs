@@ -169,6 +169,12 @@ public class KinectPointManAvatarModel : BasicAvatarModel
         return nextJointPos - jointPos;
     }
 
+    public override ulong getTrackingID()
+    {
+        if (currentBody == null)
+            return 0;
 
+        return currentBody.TrackingId;
+    }
 
 }

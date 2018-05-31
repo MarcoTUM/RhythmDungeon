@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 82d9823d33b7b6146a7bf617393a04a4
+timeCreated: 1527676977
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - gc: {instanceID: 0}
+  - m_psHitTheBeat: {fileID: 198238810330751460, guid: 9bd7f71e3793b5f4dbd5ae738ba997ec,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
