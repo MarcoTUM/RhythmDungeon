@@ -177,4 +177,14 @@ public class KinectPointManAvatarModel : BasicAvatarModel
         return currentBody.TrackingId;
     }
 
+    public override HandState getRightHandState()
+    {
+        return (currentBody == null) ? HandState.NotTracked : currentBody.HandRightState;
+    }
+
+    public override bool detectPlayer()
+    {
+        return currentBody != null;
+    }
+
 }

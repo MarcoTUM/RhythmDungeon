@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum Direction { Up, Down, Right, Left };
 public enum FieldType { Wall, Floor};
@@ -12,6 +13,7 @@ public class GameModel : MonoBehaviour {
 
     public GameObject Tile;
     public Sprite GroundLight, GroundDark;
+    public int MaxLevel, UnlockedLevel;
 	// Use this for initialization
 	void Awake () {
 		if(Instance == null)
@@ -27,9 +29,13 @@ public class GameModel : MonoBehaviour {
         Step = Tile.GetComponent<Renderer>().bounds.size.x;
 
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    public void LoadLevel(int level)
+    {
+        SceneManager.LoadScene("Level " + level);
+    }
+        // Update is called once per frame
+        void Update () {
 		
 	}
 }
