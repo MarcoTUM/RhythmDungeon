@@ -12,15 +12,18 @@ public class BodySourceManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        _sensor = KinectSensor.GetDefault();
-
-        if (_sensor != null)
+        if (GameModel.Instance.Kinect)
         {
-            _reader = _sensor.BodyFrameSource.OpenReader();
+            _sensor = KinectSensor.GetDefault();
 
-            if (!_sensor.IsOpen)
+            if (_sensor != null)
             {
-                _sensor.Open();
+                _reader = _sensor.BodyFrameSource.OpenReader();
+
+                if (!_sensor.IsOpen)
+                {
+                    _sensor.Open();
+                }
             }
         }
     }
@@ -54,7 +57,7 @@ public class BodySourceManager : MonoBehaviour
             _reader = null;
         }
 
-        if (_sensor.IsOpen)
+        if (_sensor != null && _sensor.IsOpen)
         {
             _sensor.Close();
         }

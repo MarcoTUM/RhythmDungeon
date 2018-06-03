@@ -4,8 +4,33 @@ using UnityEngine;
 
 public class Spikes : Enemy {
 
+    bool _up;
+    public int DownTime, UpTime;
+    public Sprite spikeDown, spikeUp, spikeBloody;
+    private SpriteRenderer renderer;
+    private int counter = 0;
+    void Start()
+    {
+        renderer = GetComponent<SpriteRenderer>();
+        _up = false;
+        renderer.sprite = spikeDown;
+    }
+
     public override void action()
     {
-        Debug.Log("action");
+        counter++;
+        if(counter == (_up ? UpTime : DownTime))
+        {
+            _up = !_up;
+            renderer.sprite = _up ? spikeUp : spikeDown;
+            counter = 0;
+        }
+    }
+
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag.Equals("Player") && _up)
+            Debug.Log("dead");
     }
 }

@@ -1636,49 +1636,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 1
---- !u!1001 &584205097
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4384802707859952, guid: 952ac7fca0871e04a8c24dbc1af07cdd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384802707859952, guid: 952ac7fca0871e04a8c24dbc1af07cdd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384802707859952, guid: 952ac7fca0871e04a8c24dbc1af07cdd, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384802707859952, guid: 952ac7fca0871e04a8c24dbc1af07cdd, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384802707859952, guid: 952ac7fca0871e04a8c24dbc1af07cdd, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384802707859952, guid: 952ac7fca0871e04a8c24dbc1af07cdd, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384802707859952, guid: 952ac7fca0871e04a8c24dbc1af07cdd, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384802707859952, guid: 952ac7fca0871e04a8c24dbc1af07cdd, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114871001400167372, guid: 952ac7fca0871e04a8c24dbc1af07cdd, type: 2}
-  m_ParentPrefab: {fileID: 100100000, guid: 952ac7fca0871e04a8c24dbc1af07cdd, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &586348222
 GameObject:
   m_ObjectHideFlags: 0
@@ -4516,6 +4473,7 @@ MonoBehaviour:
   Goal: {fileID: 1237331658252562, guid: c0aadccd74210624caa11d5b8b0c9ae4, type: 2}
   Key: {fileID: 1913048867211742, guid: 952ac7fca0871e04a8c24dbc1af07cdd, type: 2}
   Door: {fileID: 1830943496699856, guid: adc8784cfb91c6f4a98f540f8233004d, type: 2}
+  Spike: {fileID: 1666940550035942, guid: 95c673467b98ce14695c84cb2e09b79d, type: 2}
   Width: 20
   Height: 20
 --- !u!4 &1801669852

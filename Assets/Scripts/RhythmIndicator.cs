@@ -13,7 +13,7 @@ public class RhythmIndicator : MonoBehaviour
     public float m_beatPerSecond;
     public float m_reactionTime;
     private EnemyController enemyCont;
-
+    private bool _enemyDidAction;
     // Use this for initialization
     void Start()
     {
@@ -32,7 +32,7 @@ public class RhythmIndicator : MonoBehaviour
 
     IEnumerator WaitOnBeat()
     {
-        if (m_beatPerSecond <= m_reactionTime)
+        if (m_beatPerSecond < m_reactionTime)
         {
             Debug.Log("Error: reactionTime is bigger than beat!");
         }
@@ -43,12 +43,22 @@ public class RhythmIndicator : MonoBehaviour
                 status = Status.red;
                 GetComponent<SpriteRenderer>().color = new Color(1, 0, 0);
                 yield return new WaitForSecondsRealtime(m_beatPerSecond);
-                
+                _enemyDidAction = false;
+                   
                 status = Status.green;
                 GetComponent<SpriteRenderer>().color = new Color(0, 1, 0);
                 yield return new WaitForSecondsRealtime(m_reactionTime);
-                enemyCont.ExecuteActions();
+                ExecuteEnemyActions();
             }
+        }
+    }
+
+    public void ExecuteEnemyActions()
+    {
+        if (!_enemyDidAction)
+        {
+            _enemyDidAction = true;
+            enemyCont.ExecuteActions();
         }
     }
 }

@@ -6,6 +6,7 @@ public enum Direction { Up, Down, Right, Left };
 public enum FieldType { Wall, Floor};
 public class GameModel : MonoBehaviour {
 
+    public bool Kinect;
     public static GameModel Instance;
     public float Step;
 
