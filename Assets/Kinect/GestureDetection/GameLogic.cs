@@ -87,7 +87,6 @@ public class GameLogic : MonoBehaviour {
                 Instantiate(m_psHitTheBeat, m_rhythmIdicator.transform.position, Quaternion.identity);
             }
             else */
-<<<<<<< HEAD
             if (e.GestureName == "MoveRight")
             {
                 m_playerBehavior.MovePlayer("right");
@@ -95,12 +94,11 @@ public class GameLogic : MonoBehaviour {
                 Instantiate(m_psHitTheBeat, m_rhythmIdicator.transform.position, Quaternion.identity);
                 m_OnlyOneGesturePerBeat = false;
                 Debug.Log("MoveRight Recognized");
-=======
+            }
             if (e.GestureName == "SwipeLeft")
             {
                 moveGestureRecognized("left");
                 Debug.Log("Swipe Recognized");
->>>>>>> origin/master
             }
             /*else if (Input.GetKeyDown("up") && m_playerBehavior._nextField[Direction.Up] != FieldType.Wall)
             {
