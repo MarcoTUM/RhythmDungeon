@@ -29,16 +29,19 @@ public class RhythmBubble : MonoBehaviour {
 
     public IEnumerator MoveToPosition(Transform transform, Vector3 position, float timeToMove)
     {
-        Vector3 currentPos = transform.position;
-        float t = 0f;
-
-        while (t < 1)
+        while (GameModel.Instance.GameActive)
         {
-            t += Time.deltaTime / timeToMove;
-            //transform.position = Vector3.Lerp(currentPos, position, t);
-            transform.position = new Vector3(Mathf.Lerp(currentPos.x, position.x, t), transform.position.y, transform.position.z);
+            Vector3 currentPos = transform.position;
+            float t = 0f;
 
-            yield return null;
+            while (t < 1)
+            {
+                t += Time.deltaTime / timeToMove;
+                //transform.position = Vector3.Lerp(currentPos, position, t);
+                transform.position = new Vector3(Mathf.Lerp(currentPos.x, position.x, t), transform.position.y, transform.position.z);
+
+                yield return null;
+            }
         }
     }
 
@@ -47,8 +50,6 @@ public class RhythmBubble : MonoBehaviour {
         yield return new WaitForSecondsRealtime(m_rhythmIndicator.m_reactionTime);
 
         transform.SetPositionAndRotation(m_startPosition, Quaternion.identity);
-
-        StartCoroutine(MoveToPosition(gameObject.transform, m_rhythmIndicator.transform.position, m_rhythmIndicator.m_beatPerSecond));
     }
 
 }

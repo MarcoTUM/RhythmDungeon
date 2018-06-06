@@ -14,6 +14,9 @@ public class GameModel : MonoBehaviour {
     public GameObject Tile;
     public Sprite GroundLight, GroundDark;
     public int MaxLevel, UnlockedLevel;
+
+    public bool GameActive;
+
 	// Use this for initialization
 	void Awake () {
 		if(Instance == null)

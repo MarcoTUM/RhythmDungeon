@@ -33,6 +33,9 @@ public class GameLogic : MonoBehaviour {
 
         IRelativeGestureSegment[] moveRight = { new MoveRightSegment1(), new MoveRightSegment2() };
         gc.AddGesture("MoveRight", moveRight);
+
+        IRelativeGestureSegment[] moveLeft = { new MoveLeftSegment1(), new MoveLeftSegment2() };
+        gc.AddGesture("MoveLeft", moveLeft);
 	}
 
 
@@ -68,10 +71,11 @@ public class GameLogic : MonoBehaviour {
                     moveGestureRecognized("right");
                 }
             }
-            if (m_rhythmIdicator.status == RhythmIndicator.Status.red)
-            {
-                m_OnlyOneGesturePerBeat = true;
-            }
+          
+        }
+        if (m_rhythmIdicator.status == RhythmIndicator.Status.red)
+        {
+            m_OnlyOneGesturePerBeat = true;
         }
     }
 
@@ -79,44 +83,27 @@ public class GameLogic : MonoBehaviour {
     {
         if (m_rhythmIdicator.status == RhythmIndicator.Status.green && m_OnlyOneGesturePerBeat)
         {
-            //Kinect Input:
-            /*if (Input.GetKeyDown("down") && m_playerBehavior._nextField[Direction.Down] != FieldType.Wall)
-            {
-                m_playerBehavior.MovePlayer("down");
-                // Spawn particle effect
-                Instantiate(m_psHitTheBeat, m_rhythmIdicator.transform.position, Quaternion.identity);
-            }
-            else */
+            // Kinect input:
             if (e.GestureName == "MoveRight")
             {
+                // Move right
                 m_playerBehavior.MovePlayer("right");
                 // Spawn particle effect
                 Instantiate(m_psHitTheBeat, m_rhythmIdicator.transform.position, Quaternion.identity);
                 m_OnlyOneGesturePerBeat = false;
-                Debug.Log("MoveRight Recognized");
             }
-            if (e.GestureName == "SwipeLeft")
+            else if (e.GestureName == "MoveLeft")
             {
-                moveGestureRecognized("left");
-                Debug.Log("Swipe Recognized");
-            }
-            /*else if (Input.GetKeyDown("up") && m_playerBehavior._nextField[Direction.Up] != FieldType.Wall)
-            {
-                m_playerBehavior.MovePlayer("up");
+                // Move left
+                m_playerBehavior.MovePlayer("left");
                 // Spawn particle effect
                 Instantiate(m_psHitTheBeat, m_rhythmIdicator.transform.position, Quaternion.identity);
+                m_OnlyOneGesturePerBeat = false;
             }
-            else if (Input.GetKeyDown("right") && m_playerBehavior._nextField[Direction.Right] != FieldType.Wall)
-            {
-                m_playerBehavior.MovePlayer("right");
-                // Spawn particle effect
-                Instantiate(m_psHitTheBeat, m_rhythmIdicator.transform.position, Quaternion.identity);
-            }*/
         }
-
-        if(m_rhythmIdicator.status == RhythmIndicator.Status.red)
+        else
         {
-            m_OnlyOneGesturePerBeat = true;
+            Debug.Log("fail");
         }
     }
 

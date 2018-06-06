@@ -18,6 +18,7 @@ TagManager:
   - EnemyController
   - Level
   - Spikes
+  - Bubble
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Bubble
   - 
   - 
   - 
