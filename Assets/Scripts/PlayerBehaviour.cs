@@ -11,8 +11,8 @@ public class PlayerBehaviour : MonoBehaviour {
     public Animator animator;
     public float speed;
     public float moveOffset;
-
-
+    private bool _standing;
+    private Vector3 _startPos;
 
   
     public Dictionary<Direction, FieldType> _nextField;
@@ -24,8 +24,12 @@ public class PlayerBehaviour : MonoBehaviour {
         foreach (Direction d in System.Enum.GetValues(typeof(Direction)))
             _nextField.Add(d, FieldType.Floor);
         GameObject startTile = GameObject.FindGameObjectWithTag("Start");
-        if(startTile != null)
+        if (startTile != null)
+        {
+            _startPos = startTile.transform.position;
             this.transform.position = startTile.transform.position;
+        }
+            
 
     }
 
@@ -34,11 +38,20 @@ public class PlayerBehaviour : MonoBehaviour {
                 
     }
 
+    public void Die()
+    {
+        transform.position = _startPos;
+    }
+    public bool getStanding()
+    {
+        return _standing;
+    }
 
     public void MovePlayer(string direction)
     {
         animator.SetBool("Standing", false);
-        switch(direction){
+        _standing = false;
+        switch (direction){
             case "up":
 
                 animator.SetTrigger("GoUp");
@@ -119,7 +132,7 @@ public class PlayerBehaviour : MonoBehaviour {
             yield return new WaitForSeconds(speed);
             
         }
-
+        _standing = true;
         animator.SetBool("Standing", true);
 
     }
