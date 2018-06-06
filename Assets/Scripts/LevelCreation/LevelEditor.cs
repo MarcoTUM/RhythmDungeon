@@ -9,7 +9,7 @@ public class LevelEditor : MonoBehaviour {
     public GameObject TileSelect, StuffSelect;
     public GameObject Empty;
     public GameObject TileA, TileB, Wall, Goal;
-    public GameObject Key, Door;
+    public GameObject Key, Door, Spike;
     public int Width, Height;
     private float _step;
     int _tileNmb = 0, _stuffNmb = 0, _mode = 0; 
@@ -31,6 +31,14 @@ public class LevelEditor : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         _start = GameObject.FindGameObjectWithTag("Start");
+        if (Input.GetKeyDown("1"))
+        {
+            _tileNmb = 0;
+        }
+        if (Input.GetKeyDown("2"))
+        {
+            _tileNmb = 1;
+        }
         if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             Vector2 v = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -156,6 +164,7 @@ public class LevelEditor : MonoBehaviour {
                 _start.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
                 string name = _name;
                 _name = _name + "_final";
+                _level.tag = "Level";
                 Transform[] children = _level.GetComponentsInChildren<Transform>();
                 foreach (Transform child in children)
                 {
@@ -214,7 +223,7 @@ public class LevelEditor : MonoBehaviour {
                 replace(hit.transform.gameObject, Door);
                 break;
             case 2:
-                connect(hit.transform.gameObject);
+                replace(hit.transform.gameObject, Spike);
                 break;
             case 3:
                 replace(hit.transform.gameObject, Empty);
@@ -223,22 +232,6 @@ public class LevelEditor : MonoBehaviour {
         }
     }
 
-    void connect(GameObject obj)
-    {
-        if (!obj.tag.Equals("Empty"))
-        {
-            if(_con == null && obj.transform.tag.Equals("Key"))
-            {
-                _con = obj;
-                Debug.Log("connect step 1");
-            }
-            else if(obj.transform.tag.Equals("Door")) {
-                _con.GetComponent<Key>().door = obj.GetComponent<Door>();
-                _con = null;
-                Debug.Log("Connect finish");
-            }
-        }
-    }
     void HandleTiles(RaycastHit2D hit)
     {
         switch (_tileNmb)

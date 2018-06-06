@@ -40,31 +40,48 @@ public class PlayerBehaviour : MonoBehaviour {
         animator.SetBool("Standing", false);
         switch(direction){
             case "up":
+
+                animator.SetTrigger("GoUp");
                 if (_nextField[Direction.Up] != FieldType.Wall)
                 {
-                    animator.SetTrigger("GoUp");
                     StartCoroutine(MovePlayerTo(Vector3.up));
+                }
+                else
+                {
+                    StartCoroutine(MovePlayerTo(Vector3.zero));
                 }
                 break;
             case "down":
-                if(_nextField[Direction.Down] != FieldType.Wall)
+                animator.SetTrigger("GoDown");
+                if (_nextField[Direction.Down] != FieldType.Wall)
                 {
-                    animator.SetTrigger("GoDown");
                     StartCoroutine(MovePlayerTo(Vector3.down));
+                }
+                else
+                {
+                    StartCoroutine(MovePlayerTo(Vector3.zero));
                 }
                 break;
             case "right":
+                animator.SetTrigger("GoRight");
                 if (_nextField[Direction.Right] != FieldType.Wall)
                 {
-                    animator.SetTrigger("GoRight");
                     StartCoroutine(MovePlayerTo(Vector3.right));
+                }
+                else
+                {
+                    StartCoroutine(MovePlayerTo(Vector3.zero));
                 }
                 break;
             case "left":
+                animator.SetTrigger("GoLeft");
                 if (_nextField[Direction.Left] != FieldType.Wall)
                 {
-                    animator.SetTrigger("GoLeft");
                     StartCoroutine(MovePlayerTo(Vector3.left));
+                }
+                else
+                {
+                    StartCoroutine(MovePlayerTo(Vector3.zero));
                 }
                 break;
             default:
@@ -87,6 +104,10 @@ public class PlayerBehaviour : MonoBehaviour {
             Gizmos.DrawCube(startTile.transform.position, new Vector3(startTile.transform.localScale.x, startTile.transform.localScale.y, 0));
         }
     }
+
+    ///<summary>
+    ///animationTime = speed / Offset 
+    /// </summary>
 
     IEnumerator MovePlayerTo(Vector3 direction)
     {

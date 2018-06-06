@@ -17,6 +17,7 @@ TagManager:
   - Indicator
   - EnemyController
   - Level
+  - Spikes
   layers:
   - Default
   - TransparentFX

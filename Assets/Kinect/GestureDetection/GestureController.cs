@@ -88,4 +88,28 @@ public class GestureController : MonoBehaviour
             g.Reset();
         }
     }
+
+
+
+    public bool detectPlayer()
+    {
+        return AvatarModel.detectPlayer();
+    }
+
+    public bool getRightHandState() //returns true if right Hand is closed
+    {
+        bool temp = AvatarModel.getRightHandState() == HandState.Closed;
+        return temp;
+    }
+
+     public Vector2 getMappedRightHandPosition()
+    {
+        Vector3 spineShoulder = AvatarModel.getRawWorldPosition(JointType.SpineShoulder);
+        Vector3 handRightRel = AvatarModel.getRawWorldPosition(JointType.HandRight) - spineShoulder;
+        Vector3 handLeftRel = AvatarModel.getRawWorldPosition(JointType.HandLeft) - spineShoulder;
+        Vector2 result;
+        result.x = (handRightRel.x - 0.1f)/0.6f;
+        result.y = (handRightRel.y + 0.2f)/0.4f;
+        return result;
+    }
 }

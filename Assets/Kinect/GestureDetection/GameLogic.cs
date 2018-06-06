@@ -4,7 +4,7 @@ using System.Collections;
 public class GameLogic : MonoBehaviour {
 
     public GestureController gc;
-
+    
     public ParticleSystem m_psHitTheBeat;
     private RhythmIndicator m_rhythmIdicator;
     private PlayerBehaviour m_playerBehavior;
@@ -35,10 +35,51 @@ public class GameLogic : MonoBehaviour {
         gc.AddGesture("MoveRight", moveRight);
 	}
 
+
+    void moveGestureRecognized(string direction)
+    {
+        m_playerBehavior.MovePlayer(direction);
+        Instantiate(m_psHitTheBeat, m_rhythmIdicator.transform.position, Quaternion.identity);
+        m_OnlyOneGesturePerBeat = false;
+        m_rhythmIdicator.ExecuteEnemyActions();
+    }
+
+    void Update()
+    {
+        //Keyboard Input
+        if (!GameModel.Instance.Kinect)
+        {
+            if (m_rhythmIdicator.status == RhythmIndicator.Status.green && m_OnlyOneGesturePerBeat)
+            {
+                if (Input.GetKeyDown("down"))
+                {
+                    moveGestureRecognized("down");
+                }
+                else if (Input.GetKeyDown("left"))
+                {
+                    moveGestureRecognized("left");
+                }
+                else if (Input.GetKeyDown("up"))
+                {
+                    moveGestureRecognized("up");
+                }
+                else if (Input.GetKeyDown("right"))
+                {
+                    moveGestureRecognized("right");
+                }
+            }
+            if (m_rhythmIdicator.status == RhythmIndicator.Status.red)
+            {
+                m_OnlyOneGesturePerBeat = true;
+            }
+        }
+    }
+
     void OnGestureRecognized(object sender, GestureEventArgs e)
     {
         if (m_rhythmIdicator.status == RhythmIndicator.Status.green && m_OnlyOneGesturePerBeat)
         {
+            //Kinect Input:
             /*if (Input.GetKeyDown("down") && m_playerBehavior._nextField[Direction.Down] != FieldType.Wall)
             {
                 m_playerBehavior.MovePlayer("down");
@@ -46,6 +87,7 @@ public class GameLogic : MonoBehaviour {
                 Instantiate(m_psHitTheBeat, m_rhythmIdicator.transform.position, Quaternion.identity);
             }
             else */
+<<<<<<< HEAD
             if (e.GestureName == "MoveRight")
             {
                 m_playerBehavior.MovePlayer("right");
@@ -53,6 +95,12 @@ public class GameLogic : MonoBehaviour {
                 Instantiate(m_psHitTheBeat, m_rhythmIdicator.transform.position, Quaternion.identity);
                 m_OnlyOneGesturePerBeat = false;
                 Debug.Log("MoveRight Recognized");
+=======
+            if (e.GestureName == "SwipeLeft")
+            {
+                moveGestureRecognized("left");
+                Debug.Log("Swipe Recognized");
+>>>>>>> origin/master
             }
             /*else if (Input.GetKeyDown("up") && m_playerBehavior._nextField[Direction.Up] != FieldType.Wall)
             {
@@ -74,8 +122,5 @@ public class GameLogic : MonoBehaviour {
         }
     }
 
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }

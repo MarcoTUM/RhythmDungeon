@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Key : MonoBehaviour {
 
-    public Door door;
-
+    private Door door;
+    void Start()
+    {
+        door = GameObject.FindGameObjectWithTag("Door").GetComponent<Door>();
+    }
    
     void OnTriggerEnter2D(Collider2D col)
     {

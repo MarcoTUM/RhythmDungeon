@@ -14,4 +14,7 @@ public abstract class BasicAvatarModel : MonoBehaviour {
     public abstract Vector3 getRawWorldPosition(JointType jt);
 
     public abstract ulong getTrackingID();
+
+    public abstract bool detectPlayer();
+    public abstract HandState getRightHandState();
 }
