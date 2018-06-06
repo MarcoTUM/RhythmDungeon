@@ -36,6 +36,12 @@ public class GameLogic : MonoBehaviour {
 
         IRelativeGestureSegment[] moveLeft = { new MoveLeftSegment1(), new MoveLeftSegment2() };
         gc.AddGesture("MoveLeft", moveLeft);
+
+        IRelativeGestureSegment[] moveUp = { new MoveUpSegment1(), new MoveUpSegment2() };
+        gc.AddGesture("MoveUp", moveUp);
+
+        IRelativeGestureSegment[] moveDown = { new MoveDownSegment1(), new MoveDownSegment2() };
+        gc.AddGesture("MoveDown", moveDown);
 	}
 
 
@@ -96,6 +102,22 @@ public class GameLogic : MonoBehaviour {
             {
                 // Move left
                 m_playerBehavior.MovePlayer("left");
+                // Spawn particle effect
+                Instantiate(m_psHitTheBeat, m_rhythmIdicator.transform.position, Quaternion.identity);
+                m_OnlyOneGesturePerBeat = false;
+            }
+            else if (e.GestureName == "MoveUp")
+            {
+                // Move left
+                m_playerBehavior.MovePlayer("up");
+                // Spawn particle effect
+                Instantiate(m_psHitTheBeat, m_rhythmIdicator.transform.position, Quaternion.identity);
+                m_OnlyOneGesturePerBeat = false;
+            }
+            else if (e.GestureName == "MoveDown")
+            {
+                // Move left
+                m_playerBehavior.MovePlayer("down");
                 // Spawn particle effect
                 Instantiate(m_psHitTheBeat, m_rhythmIdicator.transform.position, Quaternion.identity);
                 m_OnlyOneGesturePerBeat = false;
