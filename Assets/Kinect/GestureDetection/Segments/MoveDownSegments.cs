@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Windows.Kinect;
 
-public class MoveLeftSegment1 : IRelativeGestureSegment
+public class MoveDownSegment1 : IRelativeGestureSegment
 {
 
     /// <summary>
@@ -11,23 +11,25 @@ public class MoveLeftSegment1 : IRelativeGestureSegment
     /// <returns>GesturePartResult based on if the gesture part has been completed</returns>
     public GesturePartResult CheckGesture(BasicAvatarModel skeleton)
     {
-        // left hand in front of left shoulder
+        // left and right hand in front of left and right shoulder
         Vector3 handLeft = skeleton.getRawWorldPosition(JointType.HandLeft);
         Vector3 shoulderCenter = skeleton.getRawWorldPosition(JointType.SpineShoulder);
         Vector3 handRight = skeleton.getRawWorldPosition(JointType.HandRight);
         Vector3 elbowLeft = skeleton.getRawWorldPosition(JointType.ElbowLeft);
+        Vector3 elbowRight = skeleton.getRawWorldPosition(JointType.ElbowRight);
 
-        if (handLeft.z > elbowLeft.z && handRight.y < shoulderCenter.y)
+        if ((handLeft.z > elbowLeft.z && handRight.y < shoulderCenter.y) && (handRight.z > elbowRight.z && handLeft.y < shoulderCenter.y))
         {
-            // left hand below shoulder height but above hip height
+            // left and right hand below shoulder height but above hip height
             Vector3 head = skeleton.getRawWorldPosition(JointType.Head);
             Vector3 hipCenter = skeleton.getRawWorldPosition(JointType.SpineBase);
             Vector3 shoulderLeft = skeleton.getRawWorldPosition(JointType.ShoulderLeft);
+            Vector3 spineMid = skeleton.getRawWorldPosition(JointType.SpineMid);
 
-            if (handLeft.y < head.y && handLeft.y > hipCenter.y)
+            if ((handLeft.y < head.y && handLeft.y > hipCenter.y) && (handRight.y < head.y && handRight.y > hipCenter.y))
             {
-                // left hand right of left shoulder
-                if (handLeft.x > shoulderLeft.x)
+                // left and right hand above spineMid
+                if (handLeft.y >= spineMid.y && handRight.y >= spineMid.y)
                 {
                     //Debug.Log("Segment1 Success");
                     return GesturePartResult.Succeed;
@@ -39,7 +41,7 @@ public class MoveLeftSegment1 : IRelativeGestureSegment
         return GesturePartResult.Fail;
     }
 }
-public class MoveLeftSegment2 : IRelativeGestureSegment
+public class MoveDownSegment2 : IRelativeGestureSegment
 {
 
     /// <summary>
@@ -49,31 +51,16 @@ public class MoveLeftSegment2 : IRelativeGestureSegment
     /// <returns>GesturePartResult based on if the gesture part has been completed</returns>
     public GesturePartResult CheckGesture(BasicAvatarModel skeleton)
     {
-        // left hand in front of left shoulder
         Vector3 handLeft = skeleton.getRawWorldPosition(JointType.HandLeft);
-        Vector3 shoulderCenter = skeleton.getRawWorldPosition(JointType.SpineShoulder);
         Vector3 handRight = skeleton.getRawWorldPosition(JointType.HandRight);
-        Vector3 elbowLeft = skeleton.getRawWorldPosition(JointType.ElbowLeft);
+        Vector3 spineMid = skeleton.getRawWorldPosition(JointType.SpineMid);
 
-        if (handLeft.z > elbowLeft.z && handRight.y < shoulderCenter.y)
+        // left and right hand bewlow spineMid
+        if (handLeft.y < spineMid.y && handRight.y < spineMid.y)
         {
-            // left hand below shoulder height but above hip height
-            Vector3 head = skeleton.getRawWorldPosition(JointType.Head);
-            Vector3 hipCenter = skeleton.getRawWorldPosition(JointType.SpineBase);
-            Vector3 shoulderLeft = skeleton.getRawWorldPosition(JointType.ShoulderLeft);
-
-            if (handLeft.y < head.y && handLeft.y > hipCenter.y)
-            {
-                // left hand right of left shoulder
-                if (handLeft.x <= shoulderLeft.x)
-                {
-                    //Debug.Log("Segment1 Success");
-                    return GesturePartResult.Succeed;
-                }
-                return GesturePartResult.Pausing;
-            }
-            return GesturePartResult.Fail;
+            //Debug.Log("Segment1 Success");
+            return GesturePartResult.Succeed;
         }
-        return GesturePartResult.Fail;
+        return GesturePartResult.Pausing;
     }
 }
