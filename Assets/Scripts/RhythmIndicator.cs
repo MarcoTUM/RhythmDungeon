@@ -19,9 +19,9 @@ public class RhythmIndicator : MonoBehaviour
     {
         enemyCont = GameObject.FindGameObjectWithTag("EnemyController").GetComponent<EnemyController>();
         status = Status.red;
-        m_continueCourutine = true;
-        m_coroutine = WaitOnBeat();
-        StartCoroutine(m_coroutine);
+        //m_continueCourutine = true;
+        //m_coroutine = WaitOnBeat();
+        //StartCoroutine(m_coroutine);
     }
 
     // Update is called once per frame
@@ -30,6 +30,7 @@ public class RhythmIndicator : MonoBehaviour
 
     }
 
+    /*
     IEnumerator WaitOnBeat()
     {
         if (m_beatPerSecond < m_reactionTime)
@@ -50,6 +51,26 @@ public class RhythmIndicator : MonoBehaviour
                 yield return new WaitForSecondsRealtime(m_reactionTime);
                 ExecuteEnemyActions();
             }
+        }
+    }
+    */
+
+    IEnumerator WaitOnBeat()
+    {
+        status = Status.green;
+        _enemyDidAction = false;
+        GetComponent<SpriteRenderer>().color = new Color(0, 1, 0);
+        yield return new WaitForSecondsRealtime(m_reactionTime);
+        status = Status.red;
+        GetComponent<SpriteRenderer>().color = new Color(1, 0, 0);
+        ExecuteEnemyActions();
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Bubble")
+        {
+            StartCoroutine(WaitOnBeat());
         }
     }
 
