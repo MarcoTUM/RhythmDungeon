@@ -30,6 +30,9 @@ public class GameLogic : MonoBehaviour {
 
         IRelativeGestureSegment[] fireBall = { new FireBallSegment1(), new FireBallSegment2(), };
         gc.AddGesture("FireBall", fireBall);
+
+        IRelativeGestureSegment[] moveRight = { new MoveRightSegment1(), new MoveRightSegment2() };
+        gc.AddGesture("MoveRight", moveRight);
 	}
 
     void OnGestureRecognized(object sender, GestureEventArgs e)
@@ -42,13 +45,14 @@ public class GameLogic : MonoBehaviour {
                 // Spawn particle effect
                 Instantiate(m_psHitTheBeat, m_rhythmIdicator.transform.position, Quaternion.identity);
             }
-            else */if (e.GestureName == "SwipeLeft")
+            else */
+            if (e.GestureName == "MoveRight")
             {
-                m_playerBehavior.MovePlayer("left");
+                m_playerBehavior.MovePlayer("right");
                 // Spawn particle effect
                 Instantiate(m_psHitTheBeat, m_rhythmIdicator.transform.position, Quaternion.identity);
                 m_OnlyOneGesturePerBeat = false;
-                Debug.Log("Swipe Recognized");
+                Debug.Log("MoveRight Recognized");
             }
             /*else if (Input.GetKeyDown("up") && m_playerBehavior._nextField[Direction.Up] != FieldType.Wall)
             {
