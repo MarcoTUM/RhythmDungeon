@@ -14,12 +14,15 @@ public class PlayerBehaviour : MonoBehaviour {
     private bool _standing;
     private Vector3 _startPos;
 
+    [SerializeField]
+    private GameObject _menuNext, _menuRestart, _menu;
   
     public Dictionary<Direction, FieldType> _nextField;
 
 	// Use this for initialization
 	void Start ()
     {
+        _menu.SetActive(false);
         _nextField = new Dictionary<Direction, FieldType>();
         foreach (Direction d in System.Enum.GetValues(typeof(Direction)))
             _nextField.Add(d, FieldType.Floor);
@@ -38,9 +41,26 @@ public class PlayerBehaviour : MonoBehaviour {
                 
     }
 
+    IEnumerator WinWithWait()
+    {
+        yield return new WaitForSeconds(speed / moveOffset);
+        Time.timeScale = 0;
+        _menu.SetActive(true);
+        _menuNext.SetActive(true);
+        _menuRestart.SetActive(false);
+    }
+
+    public void Win()
+    {
+        StartCoroutine(WinWithWait());
+    }
     public void Die()
     {
-        transform.position = _startPos;
+
+        Time.timeScale = 0;
+        _menu.SetActive(true);
+        _menuNext.SetActive(false);
+        _menuRestart.SetActive(true);
     }
     public bool getStanding()
     {
@@ -121,7 +141,7 @@ public class PlayerBehaviour : MonoBehaviour {
     ///<summary>
     ///animationTime = speed / Offset 
     /// </summary>
-
+    /// with current setup animTime = 0.2 sec;
     IEnumerator MovePlayerTo(Vector3 direction)
     {
         float tmp = 0;

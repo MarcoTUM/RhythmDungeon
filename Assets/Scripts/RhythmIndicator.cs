@@ -14,9 +14,15 @@ public class RhythmIndicator : MonoBehaviour
     public float m_reactionTime;
     private EnemyController enemyCont;
     private bool _enemyDidAction;
+    private bool _waiting;
+
     // Use this for initialization
     void Start()
     {
+        _waiting = false;
+        m_beatPerSecond = GameModel.Instance.WaitTime;
+        m_reactionTime = GameModel.Instance.ReactionTime;
+        
         enemyCont = GameObject.FindGameObjectWithTag("EnemyController").GetComponent<EnemyController>();
         status = Status.red;
         //m_continueCourutine = true;
@@ -57,6 +63,7 @@ public class RhythmIndicator : MonoBehaviour
 
     IEnumerator WaitOnBeat()
     {
+        _waiting = true;
         status = Status.green;
         _enemyDidAction = false;
         GetComponent<SpriteRenderer>().color = new Color(0, 1, 0);
@@ -64,11 +71,13 @@ public class RhythmIndicator : MonoBehaviour
         status = Status.red;
         GetComponent<SpriteRenderer>().color = new Color(1, 0, 0);
         ExecuteEnemyActions();
+        _waiting = false;
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Bubble")
+        
+        if (col.gameObject.tag == "Bubble" && !_waiting)
         {
             StartCoroutine(WaitOnBeat());
         }

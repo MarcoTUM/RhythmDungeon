@@ -20,18 +20,12 @@ public class RhythmBubble : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
-        // When bubble hits indicator loop back to start position
-        if (transform.position.x == m_rhythmIndicator.transform.position.x)
-        {
-            StartCoroutine(ResetBubble());
-        }
 	}
+
 
     public IEnumerator MoveToPosition(Transform transform, Vector3 position, float timeToMove)
     {
-        while (GameModel.Instance.GameActive)
-        {
-            Vector3 currentPos = transform.position;
+         Vector3 currentPos = transform.position;
             float t = 0f;
 
             while (t < 1)
@@ -42,14 +36,24 @@ public class RhythmBubble : MonoBehaviour {
 
                 yield return null;
             }
-        }
+        
     }
 
     public IEnumerator ResetBubble()
     {
         yield return new WaitForSecondsRealtime(m_rhythmIndicator.m_reactionTime);
+        transform.position = m_startPosition;
+        StartCoroutine(MoveToPosition(transform, m_rhythmIndicator.transform.position, m_rhythmIndicator.m_beatPerSecond));
+    }
 
-        transform.SetPositionAndRotation(m_startPosition, Quaternion.identity);
+    // When bubble hits indicator loop back to start position
+    void OnTriggerEnter2D(Collider2D col)
+    {
+
+        if (col.gameObject.tag == "RhythmIndicator")
+        {
+            StartCoroutine(ResetBubble());
+        }
     }
 
 }

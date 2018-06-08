@@ -17,7 +17,8 @@ public class GameModel : MonoBehaviour {
 
     public bool GameActive;
 
-	// Use this for initialization
+    public float ReactionTime, WaitTime;
+    // Use this for initialization
 	void Awake () {
 		if(Instance == null)
         {
@@ -37,8 +38,30 @@ public class GameModel : MonoBehaviour {
     {
         SceneManager.LoadScene("Level " + level);
     }
-        // Update is called once per frame
-        void Update () {
-		
-	}
+
+    public void LoadNextLevel()
+    {
+        Time.timeScale = 1;
+        int currentLevel = int.Parse(SceneManager.GetActiveScene().name.Split(' ')[1]);
+
+        LoadLevel(currentLevel + 1);
+    }
+
+    public void RestartLevel()
+    {
+        Time.timeScale = 1;
+        int currentLevel = int.Parse(SceneManager.GetActiveScene().name.Split(' ')[1]);
+        LoadLevel(currentLevel);
+    }
+
+    public void LoadMainMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
+    }
+
+    public void Goal()
+    {
+
+    }
 }
