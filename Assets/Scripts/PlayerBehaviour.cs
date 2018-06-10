@@ -14,14 +14,16 @@ public class PlayerBehaviour : MonoBehaviour {
     private bool _standing;
     private Vector3 _startPos;
 
+    public int CheatRight, CheatUp;
     [SerializeField]
     private GameObject _menuNext, _menuRestart, _menu;
   
     public Dictionary<Direction, FieldType> _nextField;
-
+    private int _life;
 	// Use this for initialization
 	void Start ()
     {
+        _life = 3;
         _menu.SetActive(false);
         _nextField = new Dictionary<Direction, FieldType>();
         foreach (Direction d in System.Enum.GetValues(typeof(Direction)))
@@ -36,9 +38,12 @@ public class PlayerBehaviour : MonoBehaviour {
 
     }
 
-    // Update is called once per frame
+    // Debug Stuff - delete later
     void Update () {
-                
+        if (Input.GetKeyDown("p"))
+            Cheat();
+        else if (Input.GetKeyDown("space"))
+            GameModel.Instance.RestartLevel();
     }
 
     IEnumerator WinWithWait()
@@ -54,9 +59,24 @@ public class PlayerBehaviour : MonoBehaviour {
     {
         StartCoroutine(WinWithWait());
     }
+
+    public void TakeDamage(int damage)
+    {
+        _life -= damage;
+        Debug.Log("Remaining Lifes: " + _life);// switch with GUI
+        if (_life > 0)
+        {
+            transform.position = _startPos;
+        }
+        else
+        {
+            Die();
+        }
+
+    }
+
     public void Die()
     {
-
         Time.timeScale = 0;
         _menu.SetActive(true);
         _menuNext.SetActive(false);
@@ -155,5 +175,15 @@ public class PlayerBehaviour : MonoBehaviour {
         _standing = true;
         animator.SetBool("Standing", true);
 
+    }
+
+    public void setCheckpoint(Vector3 pos)
+    {
+        _startPos = pos;
+    }
+
+    private void Cheat()
+    {
+        transform.position = new Vector3(transform.position.x + CheatRight, transform.position.y + CheatUp, transform.position.z);
     }
 }

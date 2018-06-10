@@ -36,7 +36,7 @@ public class GameModel : MonoBehaviour {
 
     public void LoadLevel(int level)
     {
-        SceneManager.LoadScene("Level " + level);
+        SceneManager.LoadScene("Scenes/Levels/Level " + level);
     }
 
     public void LoadNextLevel()
@@ -60,8 +60,5 @@ public class GameModel : MonoBehaviour {
         SceneManager.LoadScene(0);
     }
 
-    public void Goal()
-    {
-
-    }
+   
 }

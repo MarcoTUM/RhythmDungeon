@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class Pointer : MonoBehaviour {
 	// Use this for initialization
-    private Camera _camera;
+    public Camera Cam;
     private Renderer _rend;
     private Image _curImage;
     public Color normColor, activeColor;
@@ -14,10 +14,9 @@ public class Pointer : MonoBehaviour {
     private float curTimer;
     private GestureController _gestureController;
     public float z;
-	void Start () {
+  void Start () {
         _gestureController = GameObject.Find("GestureController").GetComponent<GestureController>();
-        _camera = GameObject.Find("Main Camera").GetComponent<Camera>();
-        _rend = GetComponent<Renderer>();
+       _rend = GetComponent<Renderer>();
         curTimer = 0;
 	}
 	
@@ -26,7 +25,7 @@ public class Pointer : MonoBehaviour {
         if (_gestureController.detectPlayer())
         {
             Vector2 handPos = _gestureController.getMappedRightHandPosition();
-            transform.position = _camera.ViewportToWorldPoint(new Vector3(handPos.x, handPos.y, 1));
+            transform.position = Cam.ViewportToWorldPoint(new Vector3(handPos.x, handPos.y, 1));
             transform.position = new Vector3(transform.position.x, transform.position.y, z);
 
             if (_gestureController.getRightHandState())

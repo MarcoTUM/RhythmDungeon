@@ -39,7 +39,7 @@ public class Spikes : Enemy {
 
         if (col.tag.Equals("Player") && col.GetComponent<PlayerBehaviour>().getStanding())
             if (_up)
-                col.GetComponent<PlayerBehaviour>().Die();
+                col.GetComponent<PlayerBehaviour>().TakeDamage(1);
     }
 
     void OnTriggerStay2D(Collider2D col)
