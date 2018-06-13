@@ -55,15 +55,17 @@ public class Pointer : MonoBehaviour {
     {
         var pointer = new PointerEventData(EventSystem.current);
         // convert to screen space
-        pointer.position = Camera.main.WorldToScreenPoint(transform.position);
+        pointer.position = Cam.WorldToScreenPoint(transform.position);
         var raycastResults = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointer, raycastResults);
         if (raycastResults.Count > 1)
-            Debug.LogWarning("More than one target hit by raycast");
-   
+        {
+
+            Debug.LogWarning("More than one target hit by raycast" + raycastResults.Count);
+        }
         foreach (RaycastResult result in raycastResults)
         {
-            //Debug.Log("Hit " + raycastResults.Count + result.gameObject.name);
+            Debug.Log("Hit " + raycastResults.Count + result.gameObject.name);
 
             
             Button b = result.gameObject.GetComponent<Button>();

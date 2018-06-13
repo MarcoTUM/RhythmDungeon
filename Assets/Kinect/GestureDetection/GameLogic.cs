@@ -125,7 +125,7 @@ public class GameLogic : MonoBehaviour {
         }
         else
         {
-            Debug.Log("fail");
+            //Debug.Log("fail");
         }
     }
 

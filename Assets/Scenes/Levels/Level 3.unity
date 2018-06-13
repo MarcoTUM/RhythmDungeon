@@ -147,6 +147,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114580077478893898, guid: 2e65388ea008eba4f99644b862abe891,
+        type: 2}
+      propertyPath: Kinect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114580077478893898, guid: 2e65388ea008eba4f99644b862abe891,
+        type: 2}
+      propertyPath: WaitTime
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e65388ea008eba4f99644b862abe891, type: 2}
   m_IsPrefabParent: 0
@@ -723,15 +733,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114119895821849154, guid: 8e0ed1abda94fd34cb8bd0299510d1d7,
+    - target: {fileID: 114424796263331354, guid: 8e0ed1abda94fd34cb8bd0299510d1d7,
         type: 2}
-      propertyPath: CheatRight
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 114119895821849154, guid: 8e0ed1abda94fd34cb8bd0299510d1d7,
-        type: 2}
-      propertyPath: CheatUp
-      value: 4
+      propertyPath: z
+      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e0ed1abda94fd34cb8bd0299510d1d7, type: 2}
