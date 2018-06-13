@@ -41,6 +41,8 @@ public class PlayerBehaviour : MonoBehaviour {
         {
             Debug.Log("No StartTiel Found");
         }
+
+        SoundManager.Instance.PlayBGM(2);
             
 
     }

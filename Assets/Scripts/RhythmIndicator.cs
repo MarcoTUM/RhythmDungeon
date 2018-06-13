@@ -15,10 +15,11 @@ public class RhythmIndicator : MonoBehaviour
     private EnemyController enemyCont;
     private bool _enemyDidAction;
     private bool _waiting;
-
+    private float _beat;
     // Use this for initialization
     void Start()
     {
+        _beat = 0;
         _waiting = false;
         m_beatPerSecond = GameModel.Instance.WaitTime;
         m_reactionTime = GameModel.Instance.ReactionTime;
@@ -33,7 +34,7 @@ public class RhythmIndicator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        _beat += Time.deltaTime;
     }
 
     /*
@@ -79,6 +80,8 @@ public class RhythmIndicator : MonoBehaviour
         
         if (col.gameObject.tag == "Bubble" && !_waiting)
         {
+            Debug.Log("Beat: " + _beat);
+            _beat = 0;
             StartCoroutine(WaitOnBeat());
         }
     }
