@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 61997848991741224}
   - component: {fileID: 114241846880668564}
   m_Layer: 0
-  m_Name: Spikes(Clone)
+  m_Name: Spikes1(Clone)
   m_TagString: Spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -381,7 +381,7 @@ GameObject:
   - component: {fileID: 61821742489997576}
   - component: {fileID: 114499445392914684}
   m_Layer: 0
-  m_Name: Spikes(Clone)
+  m_Name: Spikes3(Clone)
   m_TagString: Spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -926,7 +926,7 @@ GameObject:
   - component: {fileID: 61183154417080358}
   - component: {fileID: 114911591180256776}
   m_Layer: 0
-  m_Name: Spikes(Clone)
+  m_Name: Spikes3(Clone)
   m_TagString: Spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1012,7 +1012,7 @@ GameObject:
   - component: {fileID: 61872718853000436}
   - component: {fileID: 114812646843258586}
   m_Layer: 0
-  m_Name: Spikes(Clone)
+  m_Name: Spikes3(Clone)
   m_TagString: Spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1742,7 +1742,7 @@ GameObject:
   - component: {fileID: 61298965499382790}
   - component: {fileID: 114492704278671120}
   m_Layer: 0
-  m_Name: Spikes(Clone)
+  m_Name: Spikes2(Clone)
   m_TagString: Spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1897,7 +1897,7 @@ GameObject:
   - component: {fileID: 61187417126693668}
   - component: {fileID: 114581802546759890}
   m_Layer: 0
-  m_Name: Spikes(Clone)
+  m_Name: Spikes2(Clone)
   m_TagString: Spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1932,7 +1932,7 @@ GameObject:
   - component: {fileID: 61652331225905156}
   - component: {fileID: 114962415315171300}
   m_Layer: 0
-  m_Name: Spikes(Clone)
+  m_Name: Spikes2(Clone)
   m_TagString: Spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2102,7 +2102,7 @@ GameObject:
   - component: {fileID: 212686841559836620}
   - component: {fileID: 61942346415289874}
   m_Layer: 0
-  m_Name: TileB(Clone)
+  m_Name: StartTile
   m_TagString: Start
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2715,7 +2715,7 @@ GameObject:
   - component: {fileID: 61666991669778132}
   - component: {fileID: 114355845141836274}
   m_Layer: 0
-  m_Name: Spikes(Clone)
+  m_Name: Spikes2(Clone)
   m_TagString: Spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3020,7 +3020,7 @@ GameObject:
   - component: {fileID: 61662268782457648}
   - component: {fileID: 114181775370303964}
   m_Layer: 0
-  m_Name: door(Clone)
+  m_Name: door
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3225,7 +3225,7 @@ GameObject:
   - component: {fileID: 61495321149306126}
   - component: {fileID: 114940591405708542}
   m_Layer: 0
-  m_Name: Spikes(Clone)
+  m_Name: Spikes1(Clone)
   m_TagString: Spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3496,7 +3496,7 @@ GameObject:
   - component: {fileID: 61282579727464300}
   - component: {fileID: 114358494533416088}
   m_Layer: 0
-  m_Name: Spikes(Clone)
+  m_Name: Spikes2(Clone)
   m_TagString: Spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3548,7 +3548,7 @@ GameObject:
   - component: {fileID: 61468158383962344}
   - component: {fileID: 114159975417575386}
   m_Layer: 0
-  m_Name: Spikes(Clone)
+  m_Name: Spikes3(Clone)
   m_TagString: Spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3583,7 +3583,7 @@ GameObject:
   - component: {fileID: 61108951341927348}
   - component: {fileID: 114617210456116018}
   m_Layer: 0
-  m_Name: Spikes(Clone)
+  m_Name: Spikes1(Clone)
   m_TagString: Spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3907,7 +3907,7 @@ GameObject:
   - component: {fileID: 61464805127990370}
   - component: {fileID: 114754900218337332}
   m_Layer: 0
-  m_Name: Spikes(Clone)
+  m_Name: Spikes3(Clone)
   m_TagString: Spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4215,7 +4215,7 @@ GameObject:
   - component: {fileID: 61189208967062418}
   - component: {fileID: 114799359448480758}
   m_Layer: 0
-  m_Name: Spikes(Clone)
+  m_Name: Spikes2(Clone)
   m_TagString: Spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4743,7 +4743,7 @@ GameObject:
   - component: {fileID: 61580825212761402}
   - component: {fileID: 114736737953874836}
   m_Layer: 0
-  m_Name: Spikes(Clone)
+  m_Name: Spikes2(Clone)
   m_TagString: Spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4999,7 +4999,7 @@ GameObject:
   - component: {fileID: 61618106305991922}
   - component: {fileID: 114718395591504104}
   m_Layer: 0
-  m_Name: Spikes(Clone)
+  m_Name: Spikes2(Clone)
   m_TagString: Spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7278,7 +7278,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1249192875831192}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8, y: 7, z: 0}
+  m_LocalPosition: {x: 7, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4965913657254370}
@@ -7408,7 +7408,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1560802800005534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -50, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4252338322771790}
@@ -10302,7 +10302,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 5.12, y: 5.12}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -10877,7 +10877,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 5.12, y: 5.12}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -10927,7 +10927,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 5.12, y: 5.12}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -10952,7 +10952,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 5.12, y: 5.12}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -11577,7 +11577,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 5.12, y: 5.12}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -11727,7 +11727,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 5.12, y: 5.12}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -13027,7 +13027,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 5.12, y: 5.12}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -13052,7 +13052,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 5.12, y: 5.12}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -13277,7 +13277,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 5.12, y: 5.12}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -13777,7 +13777,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 5.12, y: 5.12}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -14152,7 +14152,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 5.12, y: 5.12}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -14327,7 +14327,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 5.12, y: 5.12}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -14502,7 +14502,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 5.12, y: 5.12}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -15502,7 +15502,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 5.12, y: 5.12}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -16077,7 +16077,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 5.12, y: 5.12}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -16852,7 +16852,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 5.12, y: 5.12}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -16871,12 +16871,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8359d6662badaf84ea0407f66edeafc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DownTime: 2
+  DownTime: 3
   UpTime: 2
   Offset: 0
-  spikeDown: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  spikeDown: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   spikeUp: {fileID: 21300000, guid: 603b2aab7d7ccd94aa7ef0587c10600e, type: 3}
-  spikeBloody: {fileID: 21300000, guid: 70ea046fac04e754d810b76ba0a83253, type: 3}
 --- !u!114 &114181775370303964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16900,12 +16899,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8359d6662badaf84ea0407f66edeafc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DownTime: 1
+  DownTime: 2
   UpTime: 1
   Offset: 0
-  spikeDown: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  spikeDown: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   spikeUp: {fileID: 21300000, guid: 603b2aab7d7ccd94aa7ef0587c10600e, type: 3}
-  spikeBloody: {fileID: 21300000, guid: 70ea046fac04e754d810b76ba0a83253, type: 3}
 --- !u!114 &114328365705866346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16942,9 +16940,8 @@ MonoBehaviour:
   DownTime: 2
   UpTime: 1
   Offset: 1
-  spikeDown: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  spikeDown: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   spikeUp: {fileID: 21300000, guid: 603b2aab7d7ccd94aa7ef0587c10600e, type: 3}
-  spikeBloody: {fileID: 21300000, guid: 70ea046fac04e754d810b76ba0a83253, type: 3}
 --- !u!114 &114358494533416088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16959,9 +16956,8 @@ MonoBehaviour:
   DownTime: 2
   UpTime: 1
   Offset: 1
-  spikeDown: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  spikeDown: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   spikeUp: {fileID: 21300000, guid: 603b2aab7d7ccd94aa7ef0587c10600e, type: 3}
-  spikeBloody: {fileID: 21300000, guid: 70ea046fac04e754d810b76ba0a83253, type: 3}
 --- !u!114 &114492704278671120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16976,9 +16972,8 @@ MonoBehaviour:
   DownTime: 2
   UpTime: 1
   Offset: 1
-  spikeDown: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  spikeDown: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   spikeUp: {fileID: 21300000, guid: 603b2aab7d7ccd94aa7ef0587c10600e, type: 3}
-  spikeBloody: {fileID: 21300000, guid: 70ea046fac04e754d810b76ba0a83253, type: 3}
 --- !u!114 &114499445392914684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16990,12 +16985,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8359d6662badaf84ea0407f66edeafc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DownTime: 2
+  DownTime: 3
   UpTime: 2
   Offset: 0
-  spikeDown: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  spikeDown: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   spikeUp: {fileID: 21300000, guid: 603b2aab7d7ccd94aa7ef0587c10600e, type: 3}
-  spikeBloody: {fileID: 21300000, guid: 70ea046fac04e754d810b76ba0a83253, type: 3}
 --- !u!114 &114581802546759890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17010,9 +17004,8 @@ MonoBehaviour:
   DownTime: 2
   UpTime: 1
   Offset: 1
-  spikeDown: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  spikeDown: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   spikeUp: {fileID: 21300000, guid: 603b2aab7d7ccd94aa7ef0587c10600e, type: 3}
-  spikeBloody: {fileID: 21300000, guid: 70ea046fac04e754d810b76ba0a83253, type: 3}
 --- !u!114 &114617210456116018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17024,12 +17017,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8359d6662badaf84ea0407f66edeafc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DownTime: 1
+  DownTime: 2
   UpTime: 1
   Offset: 0
-  spikeDown: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  spikeDown: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   spikeUp: {fileID: 21300000, guid: 603b2aab7d7ccd94aa7ef0587c10600e, type: 3}
-  spikeBloody: {fileID: 21300000, guid: 70ea046fac04e754d810b76ba0a83253, type: 3}
 --- !u!114 &114718395591504104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17044,9 +17036,8 @@ MonoBehaviour:
   DownTime: 2
   UpTime: 1
   Offset: 1
-  spikeDown: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  spikeDown: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   spikeUp: {fileID: 21300000, guid: 603b2aab7d7ccd94aa7ef0587c10600e, type: 3}
-  spikeBloody: {fileID: 21300000, guid: 70ea046fac04e754d810b76ba0a83253, type: 3}
 --- !u!114 &114736737953874836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17061,9 +17052,8 @@ MonoBehaviour:
   DownTime: 2
   UpTime: 1
   Offset: 1
-  spikeDown: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  spikeDown: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   spikeUp: {fileID: 21300000, guid: 603b2aab7d7ccd94aa7ef0587c10600e, type: 3}
-  spikeBloody: {fileID: 21300000, guid: 70ea046fac04e754d810b76ba0a83253, type: 3}
 --- !u!114 &114754900218337332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17075,12 +17065,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8359d6662badaf84ea0407f66edeafc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DownTime: 2
+  DownTime: 3
   UpTime: 2
   Offset: 0
-  spikeDown: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  spikeDown: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   spikeUp: {fileID: 21300000, guid: 603b2aab7d7ccd94aa7ef0587c10600e, type: 3}
-  spikeBloody: {fileID: 21300000, guid: 70ea046fac04e754d810b76ba0a83253, type: 3}
 --- !u!114 &114799359448480758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17095,9 +17084,8 @@ MonoBehaviour:
   DownTime: 2
   UpTime: 1
   Offset: 1
-  spikeDown: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  spikeDown: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   spikeUp: {fileID: 21300000, guid: 603b2aab7d7ccd94aa7ef0587c10600e, type: 3}
-  spikeBloody: {fileID: 21300000, guid: 70ea046fac04e754d810b76ba0a83253, type: 3}
 --- !u!114 &114812646843258586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17109,12 +17097,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8359d6662badaf84ea0407f66edeafc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DownTime: 2
+  DownTime: 3
   UpTime: 2
   Offset: 0
-  spikeDown: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  spikeDown: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   spikeUp: {fileID: 21300000, guid: 603b2aab7d7ccd94aa7ef0587c10600e, type: 3}
-  spikeBloody: {fileID: 21300000, guid: 70ea046fac04e754d810b76ba0a83253, type: 3}
 --- !u!114 &114857382088877246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17126,6 +17113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c442363eb95af64a93de46be3d54bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  door: {fileID: 0}
 --- !u!114 &114911591180256776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17137,12 +17125,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8359d6662badaf84ea0407f66edeafc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DownTime: 2
+  DownTime: 3
   UpTime: 2
   Offset: 0
-  spikeDown: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  spikeDown: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   spikeUp: {fileID: 21300000, guid: 603b2aab7d7ccd94aa7ef0587c10600e, type: 3}
-  spikeBloody: {fileID: 21300000, guid: 70ea046fac04e754d810b76ba0a83253, type: 3}
 --- !u!114 &114940591405708542
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17154,12 +17141,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8359d6662badaf84ea0407f66edeafc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DownTime: 1
+  DownTime: 2
   UpTime: 1
   Offset: 0
-  spikeDown: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  spikeDown: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   spikeUp: {fileID: 21300000, guid: 603b2aab7d7ccd94aa7ef0587c10600e, type: 3}
-  spikeBloody: {fileID: 21300000, guid: 70ea046fac04e754d810b76ba0a83253, type: 3}
 --- !u!114 &114962415315171300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17174,9 +17160,8 @@ MonoBehaviour:
   DownTime: 2
   UpTime: 1
   Offset: 1
-  spikeDown: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  spikeDown: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   spikeUp: {fileID: 21300000, guid: 603b2aab7d7ccd94aa7ef0587c10600e, type: 3}
-  spikeBloody: {fileID: 21300000, guid: 70ea046fac04e754d810b76ba0a83253, type: 3}
 --- !u!212 &212000286584744242
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -19225,12 +19210,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -19267,12 +19252,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -19981,12 +19966,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -20023,12 +20008,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -21157,12 +21142,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -22333,12 +22318,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -22417,12 +22402,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -22543,12 +22528,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -22669,12 +22654,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -23005,12 +22990,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -23131,12 +23116,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -24349,12 +24334,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -25147,12 +25132,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -25777,12 +25762,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -25987,12 +25972,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -27247,12 +27232,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

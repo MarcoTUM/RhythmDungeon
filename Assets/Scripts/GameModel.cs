@@ -43,8 +43,10 @@ public class GameModel : MonoBehaviour {
     {
         Time.timeScale = 1;
         int currentLevel = int.Parse(SceneManager.GetActiveScene().name.Split(' ')[1]);
-
-        LoadLevel(currentLevel + 1);
+        if (currentLevel < MaxLevel)
+            LoadLevel(currentLevel + 1);
+        else
+            LoadMainMenu();
     }
 
     public void RestartLevel()

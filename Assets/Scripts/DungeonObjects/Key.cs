@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Key : MonoBehaviour {
-
+    [SerializeField]
     private Door door;
     void Start()
     {
-        GameObject doorObj = GameObject.FindGameObjectWithTag("Door");
-        if(doorObj != null)
+        GameObject doorObj = GameObject.Find("door");
+        if(doorObj != null){
+            
             door = doorObj.GetComponent<Door>();
+        }
+        else
+        {
+            Debug.Log("door not found");
+        }
     }
    
     void OnTriggerEnter2D(Collider2D col)

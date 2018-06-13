@@ -29,11 +29,17 @@ public class PlayerBehaviour : MonoBehaviour {
         _nextField = new Dictionary<Direction, FieldType>();
         foreach (Direction d in System.Enum.GetValues(typeof(Direction)))
             _nextField.Add(d, FieldType.Floor);
-        GameObject startTile = GameObject.FindGameObjectWithTag("Start");
+
+      
+        GameObject startTile = GameObject.Find("StartTile");
         if (startTile != null)
         {
             _startPos = startTile.transform.position;
             this.transform.position = startTile.transform.position;
+        }
+        else
+        {
+            Debug.Log("No StartTiel Found");
         }
             
 

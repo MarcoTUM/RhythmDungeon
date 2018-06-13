@@ -9,7 +9,8 @@ public class Pointer : MonoBehaviour {
     public Camera Cam;
     private Renderer _rend;
     private Image _curImage;
-    public Color normColor, activeColor;
+    public Sprite OpenHand, ClosedHand;
+    public SpriteRenderer SpriteObject;
     public float holdTime;
     private float curTimer;
     private GestureController _gestureController;
@@ -30,12 +31,12 @@ public class Pointer : MonoBehaviour {
 
             if (_gestureController.getRightHandState())
             {
-                _rend.material.color = normColor;
+                SpriteObject.sprite = ClosedHand;
                 RaycastUIObjects();
             }
             else
             {
-                _rend.material.color = activeColor;
+                SpriteObject.sprite = OpenHand;
                 curTimer = 0;
                 if (_curImage != null)
                 {
@@ -65,7 +66,7 @@ public class Pointer : MonoBehaviour {
         }
         foreach (RaycastResult result in raycastResults)
         {
-            Debug.Log("Hit " + raycastResults.Count + result.gameObject.name);
+           // Debug.Log("Hit " + raycastResults.Count + result.gameObject.name);
 
             
             Button b = result.gameObject.GetComponent<Button>();

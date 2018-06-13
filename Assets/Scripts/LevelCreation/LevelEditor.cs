@@ -220,7 +220,7 @@ public class LevelEditor : MonoBehaviour {
                 replace(hit.transform.gameObject, Key);
                 break;
             case 1:
-                replace(hit.transform.gameObject, Door);
+                replace(hit.transform.gameObject, Door).name = "door";
                 break;
             case 2:
                 replace(hit.transform.gameObject, Spike);
@@ -246,10 +246,12 @@ public class LevelEditor : MonoBehaviour {
                 if (_start != null)
                 {
                     _start.transform.tag = "Floor";
+                    _start.transform.tag = "Tile(Clone)";
                     _start.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
                 }
                 _start = addFloorTile(hit);
                 _start.transform.tag = "Start";
+                _start.transform.name = "Start";
                 _start.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0);
                 break;
             case 3:
