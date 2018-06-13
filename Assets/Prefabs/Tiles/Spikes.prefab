@@ -58,7 +58,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 5.12, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -81,7 +81,7 @@ MonoBehaviour:
   DownTime: 0
   UpTime: 0
   Offset: 0
-  spikeDown: {fileID: 21300000, guid: 15c4da301b9c8264084a57bdad8a5f26, type: 3}
+  spikeDown: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
   spikeUp: {fileID: 21300000, guid: 603b2aab7d7ccd94aa7ef0587c10600e, type: 3}
   spikeBloody: {fileID: 21300000, guid: 70ea046fac04e754d810b76ba0a83253, type: 3}
 --- !u!212 &212713027919132602
@@ -116,7 +116,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 15a89bd0d0ab9074ba0efabc4be56fc4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b1f12a69b0ec0bf44bfa2d8516f46933, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

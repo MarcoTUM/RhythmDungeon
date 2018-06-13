@@ -11,34 +11,87 @@ public class PlayerBehaviour : MonoBehaviour {
     public Animator animator;
     public float speed;
     public float moveOffset;
+    private bool _standing;
+    private Vector3 _startPos;
 
-
-
+    public int CheatRight, CheatUp;
+    [SerializeField]
+    private GameObject _menuNext, _menuRestart, _menu;
   
     public Dictionary<Direction, FieldType> _nextField;
-
+    private int _life;
 	// Use this for initialization
 	void Start ()
     {
+        _life = 3;
+        _menu.SetActive(false);
         _nextField = new Dictionary<Direction, FieldType>();
         foreach (Direction d in System.Enum.GetValues(typeof(Direction)))
             _nextField.Add(d, FieldType.Floor);
         GameObject startTile = GameObject.FindGameObjectWithTag("Start");
-        if(startTile != null)
+        if (startTile != null)
+        {
+            _startPos = startTile.transform.position;
             this.transform.position = startTile.transform.position;
+        }
+            
 
     }
 
-    // Update is called once per frame
+    // Debug Stuff - delete later
     void Update () {
-                
+        if (Input.GetKeyDown("p"))
+            Cheat();
+        else if (Input.GetKeyDown("space"))
+            GameModel.Instance.RestartLevel();
     }
 
+    IEnumerator WinWithWait()
+    {
+        yield return new WaitForSeconds(speed / moveOffset);
+        Time.timeScale = 0;
+        _menu.SetActive(true);
+        _menuNext.SetActive(true);
+        _menuRestart.SetActive(false);
+    }
+
+    public void Win()
+    {
+        StartCoroutine(WinWithWait());
+    }
+
+    public void TakeDamage(int damage)
+    {
+        _life -= damage;
+        Debug.Log("Remaining Lifes: " + _life);// switch with GUI
+        if (_life > 0)
+        {
+            transform.position = _startPos;
+        }
+        else
+        {
+            Die();
+        }
+
+    }
+
+    public void Die()
+    {
+        Time.timeScale = 0;
+        _menu.SetActive(true);
+        _menuNext.SetActive(false);
+        _menuRestart.SetActive(true);
+    }
+    public bool getStanding()
+    {
+        return _standing;
+    }
 
     public void MovePlayer(string direction)
     {
         animator.SetBool("Standing", false);
-        switch(direction){
+        _standing = false;
+        switch (direction){
             case "up":
 
                 animator.SetTrigger("GoUp");
@@ -108,7 +161,7 @@ public class PlayerBehaviour : MonoBehaviour {
     ///<summary>
     ///animationTime = speed / Offset 
     /// </summary>
-
+    /// with current setup animTime = 0.2 sec;
     IEnumerator MovePlayerTo(Vector3 direction)
     {
         float tmp = 0;
@@ -119,8 +172,18 @@ public class PlayerBehaviour : MonoBehaviour {
             yield return new WaitForSeconds(speed);
             
         }
-
+        _standing = true;
         animator.SetBool("Standing", true);
 
+    }
+
+    public void setCheckpoint(Vector3 pos)
+    {
+        _startPos = pos;
+    }
+
+    private void Cheat()
+    {
+        transform.position = new Vector3(transform.position.x + CheatRight, transform.position.y + CheatUp, transform.position.z);
     }
 }

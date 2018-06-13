@@ -7,7 +7,9 @@ public class Key : MonoBehaviour {
     private Door door;
     void Start()
     {
-        door = GameObject.FindGameObjectWithTag("Door").GetComponent<Door>();
+        GameObject doorObj = GameObject.FindGameObjectWithTag("Door");
+        if(doorObj != null)
+            door = doorObj.GetComponent<Door>();
     }
    
     void OnTriggerEnter2D(Collider2D col)

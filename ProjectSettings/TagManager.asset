@@ -19,6 +19,7 @@ TagManager:
   - Level
   - Spikes
   - Bubble
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,9 @@ public class Goal : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag.Equals("Player"))
-            Debug.Log("gg");
+        {
+            col.GetComponent<PlayerBehaviour>().Win();
+        }
+           
     }
 }
