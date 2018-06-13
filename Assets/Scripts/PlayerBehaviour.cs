@@ -16,7 +16,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
     public int CheatRight, CheatUp;
     [SerializeField]
-    private GameObject _menuNext, _menuRestart, _menu;
+    private GameObject _menuNext, _menuRestart, _menu, _pointer;
   
     public Dictionary<Direction, FieldType> _nextField;
     private int _life;
@@ -24,6 +24,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	void Start ()
     {
         _life = 3;
+        _pointer.SetActive(false);
         _menu.SetActive(false);
         _nextField = new Dictionary<Direction, FieldType>();
         foreach (Direction d in System.Enum.GetValues(typeof(Direction)))
@@ -50,6 +51,7 @@ public class PlayerBehaviour : MonoBehaviour {
     {
         yield return new WaitForSeconds(speed / moveOffset);
         Time.timeScale = 0;
+        _pointer.SetActive(true);
         _menu.SetActive(true);
         _menuNext.SetActive(true);
         _menuRestart.SetActive(false);
@@ -78,6 +80,7 @@ public class PlayerBehaviour : MonoBehaviour {
     public void Die()
     {
         Time.timeScale = 0;
+        _pointer.SetActive(true);
         _menu.SetActive(true);
         _menuNext.SetActive(false);
         _menuRestart.SetActive(true);
