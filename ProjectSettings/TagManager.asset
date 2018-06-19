@@ -20,6 +20,7 @@ TagManager:
   - Spikes
   - Bubble
   - Checkpoint
+  - MovingEnemy
   layers:
   - Default
   - TransparentFX

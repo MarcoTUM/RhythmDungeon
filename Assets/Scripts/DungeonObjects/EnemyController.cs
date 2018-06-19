@@ -10,13 +10,15 @@ public class EnemyController : MonoBehaviour {
 	void Start () {
         Level = GameObject.FindGameObjectWithTag("Level");
         enemies = Level.GetComponentsInChildren<Enemy>();
+        Debug.Log(enemies.Length + " Enemies found");
 	}
 	
     public void ExecuteActions()
     {
-        foreach(Enemy enemy in enemies)
+        foreach(MovingEnemy enemy in enemies)
         {
-            enemy.action();
+            if(enemy != null)
+                enemy.action();
         }
     }
 }

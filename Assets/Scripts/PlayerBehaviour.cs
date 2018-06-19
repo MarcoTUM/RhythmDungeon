@@ -17,9 +17,10 @@ public class PlayerBehaviour : MonoBehaviour {
     public int CheatRight, CheatUp;
     [SerializeField]
     private GameObject _menuNext, _menuRestart, _menu, _pointer;
-  
+    
     public Dictionary<Direction, FieldType> _nextField;
     private int _life;
+    private MovingEnemy _nextEnemy;
 	// Use this for initialization
 	void Start ()
     {
@@ -43,18 +44,24 @@ public class PlayerBehaviour : MonoBehaviour {
         }
 
         SoundManager.Instance.PlayBGM(2);
-            
-
     }
 
     // Debug Stuff - delete later
     void Update () {
         if (Input.GetKeyDown("p"))
             Cheat();
-        else if (Input.GetKeyDown("space"))
-            GameModel.Instance.RestartLevel();
     }
 
+    public void Attack()
+    {
+        if (_nextEnemy != null)
+        {
+            //add Attack Animation
+            _nextEnemy.Die();
+            _nextEnemy = null;
+        }
+
+    }
     IEnumerator WinWithWait()
     {
         yield return new WaitForSeconds(speed / moveOffset);
@@ -92,6 +99,15 @@ public class PlayerBehaviour : MonoBehaviour {
         _menu.SetActive(true);
         _menuNext.SetActive(false);
         _menuRestart.SetActive(true);
+    }
+    public void setEnemy(MovingEnemy enemy)
+    {
+        _nextEnemy = enemy;
+    }
+
+    public GameObject getEnemy()
+    {
+        return _nextEnemy == null ? null : _nextEnemy.gameObject;
     }
     public bool getStanding()
     {
