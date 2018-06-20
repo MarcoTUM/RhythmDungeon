@@ -80,7 +80,7 @@ public class RhythmIndicator : MonoBehaviour
         
         if (col.gameObject.tag == "Bubble" && !_waiting)
         {
-            Debug.Log("Beat: " + _beat);
+            //Debug.Log("Beat: " + _beat);
             _beat = 0;
             StartCoroutine(WaitOnBeat());
         }

@@ -15,9 +15,10 @@ public class EnemyController : MonoBehaviour {
 	
     public void ExecuteActions()
     {
-        foreach(MovingEnemy enemy in enemies)
+        foreach(Enemy enemy in enemies)
         {
-            if(enemy != null)
+            //MovingEnemy movingEnemy = enemy as MovingEnemy;
+            //if (movingEnemy != null)
                 enemy.action();
         }
     }

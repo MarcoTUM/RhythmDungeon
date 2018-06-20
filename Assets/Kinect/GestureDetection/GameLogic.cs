@@ -42,6 +42,9 @@ public class GameLogic : MonoBehaviour {
 
         IRelativeGestureSegment[] moveDown = { new MoveDownSegment1(), new MoveDownSegment2() };
         gc.AddGesture("MoveDown", moveDown);
+
+        IRelativeGestureSegment[] attack = { new AttackSegment1(), new AttackSegment2() };
+        gc.AddGesture("Attack", attack);
 	}
 
     void attackGestureRecognized()
@@ -83,7 +86,7 @@ public class GameLogic : MonoBehaviour {
                 {
                     moveGestureRecognized("right");
                 }
-                else if (Input.GetKeyDown("space"))
+                else if (Input.GetKeyDown("attack"))
                 {
                     attackGestureRecognized();
                 }
@@ -98,6 +101,10 @@ public class GameLogic : MonoBehaviour {
 
     void OnGestureRecognized(object sender, GestureEventArgs e)
     {
+        if (e.GestureName == "Attack")
+        {
+            Debug.Log("Attack test.");
+        }
         if (m_rhythmIdicator.status == RhythmIndicator.Status.green && m_OnlyOneGesturePerBeat)
         {
             // Kinect input:
@@ -116,6 +123,11 @@ public class GameLogic : MonoBehaviour {
             else if (e.GestureName == "MoveDown")
             {
                 moveGestureRecognized("down");
+            }
+            else if (e.GestureName == "Attack")
+            {
+                attackGestureRecognized();
+                Debug.Log("Attack gesture recogniced.");
             }
         }
         else

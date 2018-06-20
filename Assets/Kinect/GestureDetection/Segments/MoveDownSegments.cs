@@ -15,26 +15,25 @@ public class MoveDownSegment1 : IRelativeGestureSegment
         Vector3 handLeft = skeleton.getRawWorldPosition(JointType.HandLeft);
         Vector3 shoulderCenter = skeleton.getRawWorldPosition(JointType.SpineShoulder);
         Vector3 handRight = skeleton.getRawWorldPosition(JointType.HandRight);
+
+
         Vector3 elbowLeft = skeleton.getRawWorldPosition(JointType.ElbowLeft);
         Vector3 elbowRight = skeleton.getRawWorldPosition(JointType.ElbowRight);
 
-        if ((handLeft.z > elbowLeft.z && handRight.y < shoulderCenter.y) && (handRight.z > elbowRight.z && handLeft.y < shoulderCenter.y))
+        Vector3 shoulderRight = skeleton.getRawWorldPosition(JointType.ShoulderRight);
+        Vector3 shoulderLeft= skeleton.getRawWorldPosition(JointType.ShoulderLeft);
+
+        if (handLeft.x > shoulderLeft.x && handRight.x < shoulderRight.x)
         {
             // left and right hand below shoulder height but above hip height
             Vector3 head = skeleton.getRawWorldPosition(JointType.Head);
             Vector3 hipCenter = skeleton.getRawWorldPosition(JointType.SpineBase);
-            Vector3 shoulderLeft = skeleton.getRawWorldPosition(JointType.ShoulderLeft);
             Vector3 spineMid = skeleton.getRawWorldPosition(JointType.SpineMid);
 
-            if ((handLeft.y < head.y && handLeft.y > hipCenter.y) && (handRight.y < head.y && handRight.y > hipCenter.y))
+            if ((handLeft.y < head.y && handLeft.y > spineMid.y) && (handRight.y < head.y && handRight.y > spineMid.y))
             {
-                // left and right hand above spineMid
-                if (handLeft.y >= spineMid.y && handRight.y >= spineMid.y)
-                {
-                    //Debug.Log("Segment1 Success");
-                    return GesturePartResult.Succeed;
-                }
-                return GesturePartResult.Pausing;
+                Debug.Log("Segment1 Success");
+                return GesturePartResult.Succeed;
             }
             return GesturePartResult.Fail;
         }
@@ -53,12 +52,12 @@ public class MoveDownSegment2 : IRelativeGestureSegment
     {
         Vector3 handLeft = skeleton.getRawWorldPosition(JointType.HandLeft);
         Vector3 handRight = skeleton.getRawWorldPosition(JointType.HandRight);
-        Vector3 spineMid = skeleton.getRawWorldPosition(JointType.SpineMid);
+        Vector3 spineMid = skeleton.getRawWorldPosition(JointType.SpineBase);
 
         // left and right hand bewlow spineMid
         if (handLeft.y < spineMid.y && handRight.y < spineMid.y)
         {
-            //Debug.Log("Segment1 Success");
+            Debug.Log("Segment2 Success");
             return GesturePartResult.Succeed;
         }
         return GesturePartResult.Pausing;
