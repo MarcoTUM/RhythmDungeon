@@ -101,10 +101,6 @@ public class GameLogic : MonoBehaviour {
 
     void OnGestureRecognized(object sender, GestureEventArgs e)
     {
-        if (e.GestureName == "Attack")
-        {
-            Debug.Log("Attack test.");
-        }
         if (m_rhythmIdicator.status == RhythmIndicator.Status.green && m_OnlyOneGesturePerBeat)
         {
             // Kinect input:
