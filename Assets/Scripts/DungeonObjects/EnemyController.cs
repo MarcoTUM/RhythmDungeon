@@ -12,13 +12,19 @@ public class EnemyController : MonoBehaviour {
         enemies = Level.GetComponentsInChildren<Enemy>();
         Debug.Log(enemies.Length + " Enemies found");
 	}
-	
+    public void ResetEnemies()
+    {
+        foreach (Enemy enemy in enemies)
+        {
+            if (enemy != null)
+            enemy.doReset();
+        }
+    }
     public void ExecuteActions()
     {
         foreach(Enemy enemy in enemies)
         {
-            //MovingEnemy movingEnemy = enemy as MovingEnemy;
-            //if (movingEnemy != null)
+            if (enemy != null)
                 enemy.action();
         }
     }

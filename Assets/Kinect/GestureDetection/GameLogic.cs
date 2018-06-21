@@ -86,7 +86,7 @@ public class GameLogic : MonoBehaviour {
                 {
                     moveGestureRecognized("right");
                 }
-                else if (Input.GetKeyDown("attack"))
+                else if (Input.GetKeyDown("space"))
                 {
                     attackGestureRecognized();
                 }

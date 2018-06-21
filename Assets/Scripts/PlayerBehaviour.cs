@@ -21,9 +21,12 @@ public class PlayerBehaviour : MonoBehaviour {
     public Dictionary<Direction, FieldType> _nextField;
     private int _life;
     private MovingEnemy _nextEnemy;
+    private EnemyController _enemyCont;
 	// Use this for initialization
 	void Start ()
     {
+        _enemyCont = GameObject.FindGameObjectWithTag("EnemyController").GetComponent<EnemyController>();
+
         _life = 3;
         _pointer.SetActive(false);
         _menu.SetActive(false);
@@ -84,6 +87,7 @@ public class PlayerBehaviour : MonoBehaviour {
         if (_life > 0)
         {
             transform.position = _startPos;
+            _enemyCont.ResetEnemies();
         }
         else
         {

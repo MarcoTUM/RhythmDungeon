@@ -28,7 +28,7 @@ public class EnemyCollider : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.GetComponent<MovingEnemy>() != null)
+        if (col.GetComponent<MovingEnemy>() != null)
         {
             _enemy.setField(Dir, FieldType.Wall);
         }
@@ -45,5 +45,22 @@ public class EnemyCollider : MonoBehaviour {
 
 
         _colCnt++;
+    }
+
+        void OnTriggerStay2D(Collider2D col)
+        {
+            if (col.GetComponent<MovingEnemy>() != null)
+            {
+                _enemy.setField(Dir, FieldType.Wall);
+            }
+
+    }
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.GetComponent<MovingEnemy>() != null)
+        {
+            _enemy.setField(Dir, FieldType.Floor);
+        }
+
     }
 }

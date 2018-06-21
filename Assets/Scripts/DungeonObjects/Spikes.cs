@@ -22,6 +22,17 @@ public class Spikes : Enemy {
         }
     }
 
+    public override void doReset()
+    {
+        StopAllCoroutines();
+        _up = false;
+        renderer.sprite = spikeDown;
+        counter = 0;
+        for (int i = 0; i < Offset; i++)
+        {
+            action();
+        }
+    }
     public override void action()
     {
         counter++;

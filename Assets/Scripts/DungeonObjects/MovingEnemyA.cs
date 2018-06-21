@@ -5,22 +5,18 @@ using UnityEngine;
 
 public class MovingEnemyA : MovingEnemy {
 
-    protected int counter = 0;
     protected int wait = 2;
-
     public override void action()
     {
-        counter++;
-        if (counter == wait)
+        _counter++;
+        if (_counter == wait)
         {
-            StartCoroutine(MoveTo(chooseDirection(0, 0)));
-            counter = 0;
+            StartCoroutine(MoveTo(chooseDirection(0, 0), GameModel.Instance.Step));
+            _counter = 0;
         }
         
     }
 
-
- 
 
     public Vector3 chooseDirection(float minusX, float minusY)
     {
