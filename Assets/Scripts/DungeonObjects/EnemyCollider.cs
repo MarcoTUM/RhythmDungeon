@@ -32,9 +32,9 @@ public class EnemyCollider : MonoBehaviour {
         {
             _enemy.setField(Dir, FieldType.Wall);
         }
-        if (col.tag.Equals("Wall") && _colCnt < 1)
+        else if (col.tag.Equals("Wall"))
             _enemy.setField(Dir, FieldType.Wall);
-        if (col.tag.Equals("Door"))
+        else if (col.tag.Equals("Door"))
         {
             _enemy.setField(Dir, FieldType.Wall);
         }
@@ -42,8 +42,6 @@ public class EnemyCollider : MonoBehaviour {
             _enemy.setField(Dir, FieldType.Floor);
         else
             return;
-
-
         _colCnt++;
     }
 

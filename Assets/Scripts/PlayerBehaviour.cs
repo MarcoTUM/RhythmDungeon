@@ -26,7 +26,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	void Start ()
     {
         _enemyCont = GameObject.FindGameObjectWithTag("EnemyController").GetComponent<EnemyController>();
-
+        _standing = true;
         _life = 3;
         _pointer.SetActive(false);
         _menu.SetActive(false);
@@ -68,6 +68,7 @@ public class PlayerBehaviour : MonoBehaviour {
     IEnumerator WinWithWait()
     {
         yield return new WaitForSeconds(speed / moveOffset);
+        SoundManager.Instance.StopBGM();
         Time.timeScale = 0;
         _pointer.SetActive(true);
         _menu.SetActive(true);
@@ -98,6 +99,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
     public void Die()
     {
+        SoundManager.Instance.StopBGM();
         Time.timeScale = 0;
         _pointer.SetActive(true);
         _menu.SetActive(true);

@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour {
     private GameObject Level;
     Enemy[] enemies;
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         Level = GameObject.FindGameObjectWithTag("Level");
         enemies = Level.GetComponentsInChildren<Enemy>();
         Debug.Log(enemies.Length + " Enemies found");
@@ -24,7 +24,7 @@ public class EnemyController : MonoBehaviour {
     {
         foreach(Enemy enemy in enemies)
         {
-            if (enemy != null)
+            if (enemy != null && enemy.gameObject.activeSelf)
                 enemy.action();
         }
     }

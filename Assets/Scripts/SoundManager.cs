@@ -29,12 +29,16 @@ public class SoundManager : MonoBehaviour {
     {
         if (sel < BGMClips.Count)
         {
+            StopBGM();
             BGM.clip = BGMClips[sel];
             BGM.Play();
         }
         else
             Debug.LogError("BGM selection too high!");
-        
+    }
+    public void StopBGM()
+    {
+        BGM.Stop();
     }
 
     public void PlaySFX(int sel)

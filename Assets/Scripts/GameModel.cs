@@ -36,6 +36,7 @@ public class GameModel : MonoBehaviour {
 
     public void LoadLevel(int level)
     {
+        SoundManager.Instance.BGM.Stop();
         SceneManager.LoadScene("Scenes/Levels/Level " + level);
     }
 

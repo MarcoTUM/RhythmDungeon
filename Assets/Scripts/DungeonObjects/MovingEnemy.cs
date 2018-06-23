@@ -11,10 +11,11 @@ public abstract class MovingEnemy : Enemy {
     protected float _moveOffset;
     protected Vector3 _lastPos;
     public int Prio;
-
+    protected bool _movingBack;
     protected int _counter = 0;
     void Start()
     {
+        _movingBack = false;
         _startPos = this.transform.position;
         _lastPos = _startPos;
         _player = GameObject.Find("Player");
@@ -49,6 +50,8 @@ public abstract class MovingEnemy : Enemy {
         }
         transform.position = _lastPos + direction * Distance;
         _lastPos = transform.position;
+        if (_movingBack)
+            _movingBack = false;
     }
 
     public void setField(Direction dir, FieldType val)
@@ -58,8 +61,10 @@ public abstract class MovingEnemy : Enemy {
 
     public void putToLastPos()
     {
+        Debug.Log("moveBack" + Prio);
         StopAllCoroutines();
 
+        _movingBack = true;
         Vector3 dist = (_lastPos - transform.position);
         _lastPos = transform.position;
         Debug.Log(dist.normalized);
@@ -70,13 +75,16 @@ public abstract class MovingEnemy : Enemy {
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag.Equals("Player") && col.GetComponent<PlayerBehaviour>().getStanding())
+        {
+            Debug.Log("hit");
             col.GetComponent<PlayerBehaviour>().TakeDamage(1);
+        }
         if (col.tag.Equals("MovingEnemy"))
         {
             MovingEnemy other = col.GetComponent<MovingEnemy>();
-            if(other.Prio < this.Prio)
+            if(other.Prio > this.Prio && !_movingBack)
             {
-                other.putToLastPos();
+                putToLastPos();
             }
         }
     }

@@ -49,7 +49,6 @@ public class PlayerCollider : MonoBehaviour {
         if(col.gameObject == _player.getEnemy())
         {
             _player.setEnemy(null);
-            Debug.Log("bye");
         }
     }
 }
