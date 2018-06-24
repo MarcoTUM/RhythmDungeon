@@ -36,6 +36,7 @@ public class GameModel : MonoBehaviour {
 
     public void LoadLevel(int level)
     {
+        SoundManager.Instance.BGM.Stop();
         SceneManager.LoadScene("Scenes/Levels/Level " + level);
     }
 
@@ -43,8 +44,10 @@ public class GameModel : MonoBehaviour {
     {
         Time.timeScale = 1;
         int currentLevel = int.Parse(SceneManager.GetActiveScene().name.Split(' ')[1]);
-
-        LoadLevel(currentLevel + 1);
+        if (currentLevel < MaxLevel)
+            LoadLevel(currentLevel + 1);
+        else
+            LoadMainMenu();
     }
 
     public void RestartLevel()

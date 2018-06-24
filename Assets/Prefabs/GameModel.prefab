@@ -60,4 +60,4 @@ MonoBehaviour:
   UnlockedLevel: 3
   GameActive: 1
   ReactionTime: 0.5
-  WaitTime: 0.5
+  WaitTime: 0.7

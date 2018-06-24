@@ -27,6 +27,10 @@ public class PlayerCollider : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        if (col.GetComponent<MovingEnemy>() != null)
+        {
+            _player.setEnemy(col.GetComponent<MovingEnemy>());
+        }
         if(col.tag.Equals("Wall") && _colCnt<1)
             _player.setField(Dir, FieldType.Wall);
         if (col.tag.Equals("Door"))
@@ -37,8 +41,14 @@ public class PlayerCollider : MonoBehaviour {
             _player.setField(Dir, FieldType.Floor);
         else
             return;
-
-
         _colCnt++;
+    }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if(col.gameObject == _player.getEnemy())
+        {
+            _player.setEnemy(null);
+        }
     }
 }

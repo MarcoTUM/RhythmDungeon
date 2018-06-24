@@ -17,39 +17,58 @@ public class PlayerBehaviour : MonoBehaviour {
     public int CheatRight, CheatUp;
     [SerializeField]
     private GameObject _menuNext, _menuRestart, _menu, _pointer;
-  
+    
     public Dictionary<Direction, FieldType> _nextField;
     private int _life;
+    private MovingEnemy _nextEnemy;
+    private EnemyController _enemyCont;
 	// Use this for initialization
 	void Start ()
     {
+        _enemyCont = GameObject.FindGameObjectWithTag("EnemyController").GetComponent<EnemyController>();
+        _standing = true;
         _life = 3;
         _pointer.SetActive(false);
         _menu.SetActive(false);
         _nextField = new Dictionary<Direction, FieldType>();
         foreach (Direction d in System.Enum.GetValues(typeof(Direction)))
             _nextField.Add(d, FieldType.Floor);
-        GameObject startTile = GameObject.FindGameObjectWithTag("Start");
+
+      
+        GameObject startTile = GameObject.Find("StartTile");
         if (startTile != null)
         {
             _startPos = startTile.transform.position;
             this.transform.position = startTile.transform.position;
         }
-            
+        else
+        {
+            Debug.Log("No StartTiel Found");
+        }
 
+        SoundManager.Instance.PlayBGM(2);
     }
 
     // Debug Stuff - delete later
     void Update () {
         if (Input.GetKeyDown("p"))
             Cheat();
-        else if (Input.GetKeyDown("space"))
-            GameModel.Instance.RestartLevel();
     }
 
+    public void Attack()
+    {
+        if (_nextEnemy != null)
+        {
+            //add Attack Animation
+            _nextEnemy.Die();
+            _nextEnemy = null;
+        }
+
+    }
     IEnumerator WinWithWait()
     {
         yield return new WaitForSeconds(speed / moveOffset);
+        SoundManager.Instance.StopBGM();
         Time.timeScale = 0;
         _pointer.SetActive(true);
         _menu.SetActive(true);
@@ -69,6 +88,7 @@ public class PlayerBehaviour : MonoBehaviour {
         if (_life > 0)
         {
             transform.position = _startPos;
+            _enemyCont.ResetEnemies();
         }
         else
         {
@@ -79,11 +99,21 @@ public class PlayerBehaviour : MonoBehaviour {
 
     public void Die()
     {
+        SoundManager.Instance.StopBGM();
         Time.timeScale = 0;
         _pointer.SetActive(true);
         _menu.SetActive(true);
         _menuNext.SetActive(false);
         _menuRestart.SetActive(true);
+    }
+    public void setEnemy(MovingEnemy enemy)
+    {
+        _nextEnemy = enemy;
+    }
+
+    public GameObject getEnemy()
+    {
+        return _nextEnemy == null ? null : _nextEnemy.gameObject;
     }
     public bool getStanding()
     {

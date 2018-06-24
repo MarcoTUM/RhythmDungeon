@@ -18,22 +18,20 @@ public class MoveUpSegment1 : IRelativeGestureSegment
         Vector3 elbowLeft = skeleton.getRawWorldPosition(JointType.ElbowLeft);
         Vector3 elbowRight = skeleton.getRawWorldPosition(JointType.ElbowRight);
 
-        if ((handLeft.z > elbowLeft.z && handRight.y < shoulderCenter.y) && (handRight.z > elbowRight.z && handLeft.y < shoulderCenter.y))
+        Vector3 shoulderRight = skeleton.getRawWorldPosition(JointType.ShoulderRight);
+        Vector3 shoulderLeft = skeleton.getRawWorldPosition(JointType.ShoulderLeft);
+
+        if (handLeft.x > shoulderLeft.x && handRight.x < shoulderRight.x)
         {
             // left and right hand below shoulder height but above hip height
             Vector3 head = skeleton.getRawWorldPosition(JointType.Head);
             Vector3 hipCenter = skeleton.getRawWorldPosition(JointType.SpineBase);
-            Vector3 shoulderLeft = skeleton.getRawWorldPosition(JointType.ShoulderLeft);
+            Vector3 spineMid = skeleton.getRawWorldPosition(JointType.SpineMid);
 
-            if ((handLeft.y < head.y && handLeft.y > hipCenter.y) && (handRight.y < head.y && handRight.y > hipCenter.y))
+            if ((handLeft.y < head.y && handLeft.y > spineMid.y) && (handRight.y < head.y && handRight.y > spineMid.y))
             {
-                // left and right hand below head
-                if (handLeft.y <  head.y && handRight.y < head.y)
-                {
-                    //Debug.Log("Segment1 Success");
-                    return GesturePartResult.Succeed;
-                }
-                return GesturePartResult.Pausing;
+                //Debug.Log("Segment1 Success");
+                return GesturePartResult.Succeed;
             }
             return GesturePartResult.Fail;
         }

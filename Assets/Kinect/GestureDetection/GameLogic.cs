@@ -42,9 +42,19 @@ public class GameLogic : MonoBehaviour {
 
         IRelativeGestureSegment[] moveDown = { new MoveDownSegment1(), new MoveDownSegment2() };
         gc.AddGesture("MoveDown", moveDown);
+
+        IRelativeGestureSegment[] attack = { new AttackSegment1(), new AttackSegment2() };
+        gc.AddGesture("Attack", attack);
 	}
 
+    void attackGestureRecognized()
+    {
 
+        m_playerBehavior.Attack();
+        Instantiate(m_psHitTheBeat, m_rhythmIdicator.transform.position, Quaternion.identity);
+        m_OnlyOneGesturePerBeat = false;
+        m_rhythmIdicator.ExecuteEnemyActions();
+    }
     void moveGestureRecognized(string direction)
     {
         m_playerBehavior.MovePlayer(direction);
@@ -76,6 +86,10 @@ public class GameLogic : MonoBehaviour {
                 {
                     moveGestureRecognized("right");
                 }
+                else if (Input.GetKeyDown("space"))
+                {
+                    attackGestureRecognized();
+                }
             }
           
         }
@@ -92,35 +106,24 @@ public class GameLogic : MonoBehaviour {
             // Kinect input:
             if (e.GestureName == "MoveRight")
             {
-                // Move right
-                m_playerBehavior.MovePlayer("right");
-                // Spawn particle effect
-                Instantiate(m_psHitTheBeat, m_rhythmIdicator.transform.position, Quaternion.identity);
-                m_OnlyOneGesturePerBeat = false;
+                moveGestureRecognized("right");
             }
             else if (e.GestureName == "MoveLeft")
             {
-                // Move left
-                m_playerBehavior.MovePlayer("left");
-                // Spawn particle effect
-                Instantiate(m_psHitTheBeat, m_rhythmIdicator.transform.position, Quaternion.identity);
-                m_OnlyOneGesturePerBeat = false;
+                moveGestureRecognized("left");
             }
             else if (e.GestureName == "MoveUp")
             {
-                // Move left
-                m_playerBehavior.MovePlayer("up");
-                // Spawn particle effect
-                Instantiate(m_psHitTheBeat, m_rhythmIdicator.transform.position, Quaternion.identity);
-                m_OnlyOneGesturePerBeat = false;
+                moveGestureRecognized("up");
             }
             else if (e.GestureName == "MoveDown")
             {
-                // Move left
-                m_playerBehavior.MovePlayer("down");
-                // Spawn particle effect
-                Instantiate(m_psHitTheBeat, m_rhythmIdicator.transform.position, Quaternion.identity);
-                m_OnlyOneGesturePerBeat = false;
+                moveGestureRecognized("down");
+            }
+            else if (e.GestureName == "Attack")
+            {
+                attackGestureRecognized();
+                Debug.Log("Attack gesture recogniced.");
             }
         }
         else

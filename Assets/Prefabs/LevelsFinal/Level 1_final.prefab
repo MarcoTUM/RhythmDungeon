@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 212086840722593272}
   - component: {fileID: 61876638381820890}
   m_Layer: 0
-  m_Name: TileB(Clone)
+  m_Name: StartTile
   m_TagString: Start
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 61948012560521188}
   - component: {fileID: 114918251519810448}
   m_Layer: 0
-  m_Name: door(Clone)
+  m_Name: door
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8870,6 +8870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c442363eb95af64a93de46be3d54bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  door: {fileID: 0}
 --- !u!212 &212017788256508528
 SpriteRenderer:
   m_ObjectHideFlags: 1

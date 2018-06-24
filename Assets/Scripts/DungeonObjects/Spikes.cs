@@ -6,7 +6,7 @@ public class Spikes : Enemy {
 
     bool _up;
     public int DownTime, UpTime, Offset;
-    public Sprite spikeDown, spikeUp, spikeBloody;
+    public Sprite spikeDown, spikeUp;
     private SpriteRenderer renderer;
     private int counter = 0;
     void Start()
@@ -22,6 +22,17 @@ public class Spikes : Enemy {
         }
     }
 
+    public override void doReset()
+    {
+        StopAllCoroutines();
+        _up = false;
+        renderer.sprite = spikeDown;
+        counter = 0;
+        for (int i = 0; i < Offset; i++)
+        {
+            action();
+        }
+    }
     public override void action()
     {
         counter++;

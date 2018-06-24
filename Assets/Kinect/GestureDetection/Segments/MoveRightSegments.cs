@@ -59,13 +59,12 @@ public class MoveRightSegment2 : IRelativeGestureSegment
         {
             // right hand below shoulder height but above hip height
             Vector3 head = skeleton.getRawWorldPosition(JointType.Head);
-            Vector3 hipCenter = skeleton.getRawWorldPosition(JointType.SpineBase);
             Vector3 shoulderRight = skeleton.getRawWorldPosition(JointType.ShoulderRight);
 
-            if (handRight.y < head.y && handRight.y > hipCenter.y)
+            if (handRight.y < head.y && handRight.y >= shoulderCenter.y - 0.2f)
             {
                 // right hand right of right shoulder
-                if (handRight.x > shoulderRight.x)
+                if (handRight.x - 0.4f > shoulderRight.x)
                 {
                     //Debug.Log("Segment1 Success");
                     return GesturePartResult.Succeed;
