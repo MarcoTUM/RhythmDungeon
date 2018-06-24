@@ -60,6 +60,7 @@ public class PlayerBehaviour : MonoBehaviour {
         if (_nextEnemy != null)
         {
             //add Attack Animation
+            animator.SetTrigger("Attack");
             _nextEnemy.Die();
             _nextEnemy = null;
         }
