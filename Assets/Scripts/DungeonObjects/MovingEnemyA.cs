@@ -11,8 +11,9 @@ public class MovingEnemyA : MovingEnemy {
         _counter++;
         if (_counter == wait)
         {
-            StartCoroutine(MoveTo(chooseDirection(0, 0), GameModel.Instance.Step));
-            selectAnimation(chooseDirection(0, 0));
+            Vector3 dir = chooseDirection(0, 0);
+            StartCoroutine(MoveTo(dir, GameModel.Instance.Step));
+            selectAnimation(dir);
             _counter = 0;
         }
         

@@ -94,6 +94,10 @@ public abstract class MovingEnemy : Enemy {
                 putToLastPos();
             }
         }
+        else if (col.tag.Equals("Wall")) // Still kinda buggy
+        {
+            putToLastPos();
+        }
     }
     void OnTriggerStay2D(Collider2D col)
     {
