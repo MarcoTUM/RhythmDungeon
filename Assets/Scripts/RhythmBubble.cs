@@ -6,6 +6,9 @@ public class RhythmBubble : MonoBehaviour {
 
     private RhythmIndicator m_rhythmIndicator;
     private Vector3 m_startPosition;
+    
+    //public enum BubbleType { left, right};
+    //public BubbleType myBubbleType;
 
     void Start()
     {
@@ -13,14 +16,23 @@ public class RhythmBubble : MonoBehaviour {
 
         // Get rhythm indicator
         m_rhythmIndicator = GameObject.FindGameObjectWithTag("RhythmIndicator").GetComponent<RhythmIndicator>();
+        Rigidbody2D myRigid = this.GetComponent<Rigidbody2D>();
+        if (myRigid)
+        {
+            float normX = (m_rhythmIndicator.transform.position.x - m_startPosition.x) / m_rhythmIndicator.myBeatPerSecond; // Mathf.Abs(m_rhythmIndicator.transform.position.x - m_startPosition.x);
+            myRigid.velocity = new Vector2(normX, 0);
+        }
 
-        StartCoroutine(MoveToPosition(transform, m_rhythmIndicator.transform.position, m_rhythmIndicator.m_beatPerSecond));
+        //StartCoroutine(MoveToPosition(transform, m_rhythmIndicator.transform.position, m_rhythmIndicator.m_beatPerSecond));
     }
 	
 	// Update is called once per frame
 	void Update () 
     {
+
 	}
+
+
 
 
     public IEnumerator MoveToPosition(Transform transform, Vector3 position, float timeToMove)
@@ -37,21 +49,26 @@ public class RhythmBubble : MonoBehaviour {
             }
     }
 
+    public void ResetThisBubble()
+    {
+        StartCoroutine(ResetBubble());
+    }
+
     public IEnumerator ResetBubble()
     {
         yield return new WaitForSecondsRealtime(m_rhythmIndicator.m_reactionTime);
         transform.position = m_startPosition;
-        StartCoroutine(MoveToPosition(transform, m_rhythmIndicator.transform.position, m_rhythmIndicator.m_beatPerSecond));
+        //StartCoroutine(MoveToPosition(transform, m_rhythmIndicator.transform.position, m_rhythmIndicator.m_beatPerSecond));
     }
 
     // When bubble hits indicator loop back to start position
-    void OnTriggerEnter2D(Collider2D col)
-    {
+    //void OnTriggerEnter2D(Collider2D col)
+    //{
 
-        if (col.gameObject.tag == "RhythmIndicator")
-        {
-            StartCoroutine(ResetBubble());
-        }
-    }
+    //    if (col.gameObject.tag == "RhythmIndicator")
+    //    {
+    //        StartCoroutine(ResetBubble());
+    //    }
+    //}
 
 }

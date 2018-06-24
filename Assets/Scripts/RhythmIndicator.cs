@@ -11,11 +11,15 @@ public class RhythmIndicator : MonoBehaviour
     public enum Status { green, red }
     public Status status;
     public float m_beatPerSecond;
+    public float myBeatPerSecond;
     public float m_reactionTime;
     private EnemyController enemyCont;
     private bool _enemyDidAction;
     private bool _waiting;
     private float _beat;
+
+    public RhythmBubble[] myBubbles;
+
     // Use this for initialization
     void Start()
     {
@@ -83,6 +87,14 @@ public class RhythmIndicator : MonoBehaviour
             //Debug.Log("Beat: " + _beat);
             _beat = 0;
             StartCoroutine(WaitOnBeat());
+        }
+
+        if(col.gameObject.tag == "Bubble")
+        {
+            for(int i = 0; i < myBubbles.Length; i++)
+            {
+                myBubbles[i].ResetThisBubble();
+            }
         }
     }
 
