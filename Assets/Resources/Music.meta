@@ -1,10 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Resources/Music.meta
 guid: c5bc7961d160ada42846bb791a79c6fe
+=======
+guid: 3c0b3f7ed44ba1b47ac44905b6c69f5c
+>>>>>>> 85379dedc57e77799f78c8050cc718acd774ff31:Assets/Scripts/Music.meta
 folderAsset: yes
 timeCreated: 1528890097
 licenseType: Free
 DefaultImporter:
-  externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
