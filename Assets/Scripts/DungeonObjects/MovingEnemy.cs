@@ -9,7 +9,7 @@ public abstract class MovingEnemy : Enemy {
     protected Vector3 _startPos;
     protected float _speed;
     protected float _moveOffset;
-    protected Vector3 _lastPos;
+    public Vector3 _lastPos;
     public int Prio;
     protected bool _movingBack;
     protected int _counter = 0;

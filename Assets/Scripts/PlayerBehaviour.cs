@@ -60,7 +60,34 @@ public class PlayerBehaviour : MonoBehaviour {
         if (_nextEnemy != null)
         {
             //add Attack Animation
-            animator.SetTrigger("Attack");
+            float tmpX = _nextEnemy.transform.position.x - this.transform.position.x;
+            float tmpY = _nextEnemy.transform.position.y - this.transform.position.y;
+            Debug.Log("TmpY: " + tmpY);
+            Debug.Log("TmpX: " + tmpX);
+            if (Mathf.Abs(tmpX) < Mathf.Abs(tmpY))
+            {
+                
+                if(tmpY < 0)
+                {
+                    animator.SetTrigger("AttackDown");
+                }
+                else
+                {
+                    animator.SetTrigger("AttackUp");
+                }
+            }
+            else
+            {
+                if (tmpX < 0)
+                {
+                    animator.SetTrigger("AttackLeft");
+                }
+                else
+                {
+                    animator.SetTrigger("AttackRight");
+                }
+            }
+            
             _nextEnemy.Die();
             _nextEnemy = null;
         }
