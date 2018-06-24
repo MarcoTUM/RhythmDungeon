@@ -12,6 +12,7 @@ public class MovingEnemyA : MovingEnemy {
         if (_counter == wait)
         {
             StartCoroutine(MoveTo(chooseDirection(0, 0), GameModel.Instance.Step));
+            selectAnimation(chooseDirection(0, 0));
             _counter = 0;
         }
         

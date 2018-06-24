@@ -13,6 +13,10 @@ public abstract class MovingEnemy : Enemy {
     public int Prio;
     protected bool _movingBack;
     protected int _counter = 0;
+
+    //variables for animator
+    protected Animator enemyAnimator;
+
     void Start()
     {
         _movingBack = false;
@@ -25,6 +29,8 @@ public abstract class MovingEnemy : Enemy {
 
         _speed = _player.GetComponent<PlayerBehaviour>().speed;
         _moveOffset = _player.GetComponent<PlayerBehaviour>().moveOffset;
+
+        enemyAnimator = GetComponent<Animator>();
     }
 
     public override void doReset()
@@ -41,6 +47,7 @@ public abstract class MovingEnemy : Enemy {
     }
     protected IEnumerator MoveTo(Vector3 direction, float Distance)
     {
+        
         float tmp = 0;
         while (tmp < Distance)
         {
@@ -91,6 +98,30 @@ public abstract class MovingEnemy : Enemy {
     void OnTriggerStay2D(Collider2D col)
     {
         OnTriggerEnter2D(col);
+    }
+
+    protected void selectAnimation(Vector3 direction)
+    {
+        if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+        {
+            if(direction.x < 0)
+            {
+                enemyAnimator.SetTrigger("GoLeft");
+            }else
+            {
+                enemyAnimator.SetTrigger("GoRight");
+            }
+        }else
+        {
+            if (direction.y < 0)
+            {
+                enemyAnimator.SetTrigger("GoDown");
+            }
+            else
+            {
+                enemyAnimator.SetTrigger("GoUp");
+            }
+        }
     }
 
 }

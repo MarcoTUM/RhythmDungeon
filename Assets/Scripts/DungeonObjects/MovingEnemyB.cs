@@ -7,12 +7,15 @@ public class MovingEnemyB : MovingEnemy {
 
     protected int wait = 1;
     public bool Special;
+    
     public override void action()
     {
         _counter++;
         if (_counter == wait)
         {
             StartCoroutine(MoveTo(chooseDirection(), GameModel.Instance.Step));
+            Debug.Log("x: " + chooseDirection().x + "; y: " + chooseDirection().y);
+            selectAnimationEnemyB(chooseDirection());
             _counter = 0;
         }
         
@@ -47,7 +50,7 @@ public class MovingEnemyB : MovingEnemy {
         int[] xArr = { 1, 1, -1, -1 };
         int[] yArr = { 1, -1, -1, 1 };
         int timeout = 50;
-        Debug.Log("normalDirectoin Wall" + x + " - " + y);
+        //Debug.Log("normalDirectoin Wall" + x + " - " + y);
         while(nextField == FieldType.Wall && timeout>0)
         {
             int t = UnityEngine.Random.Range(0, 4);
@@ -67,5 +70,35 @@ public class MovingEnemyB : MovingEnemy {
             return new Vector3(x, y, 0);
 
         return Vector3.zero;
+    }
+
+
+
+    void selectAnimationEnemyB(Vector3 direction)
+    {
+        if(direction.x < 0)
+        {
+            if(direction.y < 0)
+            {
+                Debug.Log("Move Down");
+                enemyAnimator.SetTrigger("GoDown");
+            }else
+            {
+                Debug.Log("Move Left");
+                enemyAnimator.SetTrigger("GoLeft");
+            }
+        }
+        else
+        {
+            if(direction.y < 0)
+            {
+                Debug.Log("Move Right");
+                enemyAnimator.SetTrigger("GoRight");
+            }else
+            {
+                Debug.Log("Move Up");
+                enemyAnimator.SetTrigger("GoUp");
+            }
+        }
     }
 }
