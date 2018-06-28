@@ -5,8 +5,8 @@ using UnityEngine;
 public class RhythmBubble : MonoBehaviour {
 
     private RhythmIndicator m_rhythmIndicator;
-    private Vector3 m_startPosition;
-    
+    public Vector3 m_startPosition;
+    public bool Important;
     //public enum BubbleType { left, right};
     //public BubbleType myBubbleType;
 
@@ -19,7 +19,8 @@ public class RhythmBubble : MonoBehaviour {
         Rigidbody2D myRigid = this.GetComponent<Rigidbody2D>();
         if (myRigid)
         {
-            float normX = (m_rhythmIndicator.transform.position.x - m_startPosition.x) / m_rhythmIndicator.myBeatPerSecond; // Mathf.Abs(m_rhythmIndicator.transform.position.x - m_startPosition.x);
+            float normX = (m_rhythmIndicator.transform.position.x - m_startPosition.x) / m_rhythmIndicator.m_beatPerSecond; // Mathf.Abs(m_rhythmIndicator.transform.position.x - m_startPosition.x);
+            Debug.Log("vel: " + m_rhythmIndicator.m_beatPerSecond);
             myRigid.velocity = new Vector2(normX, 0);
         }
 

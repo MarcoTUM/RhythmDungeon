@@ -51,13 +51,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 023d7926320d5cc4fafd108c68d90a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Kinect: 0
+  Kinect: 1
   Step: 0
   Tile: {fileID: 1027264347510868, guid: da988df264a396440b9ce725e8c44d19, type: 2}
   GroundLight: {fileID: 21300000, guid: 72ccfadabeb73f64a8f13790026e682c, type: 3}
   GroundDark: {fileID: 21300000, guid: b10484639b01f2e478316a771fce630f, type: 3}
-  MaxLevel: 3
-  UnlockedLevel: 3
+  MaxLevel: 5
+  UnlockedLevel: 5
   GameActive: 1
   ReactionTime: 0.5
-  WaitTime: 0.7
+  WaitTime: 1.54

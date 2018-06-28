@@ -11,7 +11,7 @@ public class RhythmIndicator : MonoBehaviour
     public enum Status { green, red }
     public Status status;
     public float m_beatPerSecond;
-    public float myBeatPerSecond;
+    //public float myBeatPerSecond;
     public float m_reactionTime;
     private EnemyController enemyCont;
     private bool _enemyDidAction;
@@ -89,7 +89,7 @@ public class RhythmIndicator : MonoBehaviour
             StartCoroutine(WaitOnBeat());
         }
 
-        if(col.gameObject.tag == "Bubble")
+        if(col.gameObject.tag == "Bubble" && col.transform.GetComponent<RhythmBubble>().Important)
         {
             for(int i = 0; i < myBubbles.Length; i++)
             {

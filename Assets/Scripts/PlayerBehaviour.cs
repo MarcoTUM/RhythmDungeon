@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.UIElements;
 
 
 public class PlayerBehaviour : MonoBehaviour {
@@ -22,10 +23,18 @@ public class PlayerBehaviour : MonoBehaviour {
     private int _life;
     private MovingEnemy _nextEnemy;
     private EnemyController _enemyCont;
+    private Transform _livePanel;
+    private GameObject[] _hearts = new GameObject[3];
 	// Use this for initialization
 	void Start ()
     {
-        _enemyCont = GameObject.FindGameObjectWithTag("EnemyController").GetComponent<EnemyController>();
+        _livePanel = GameObject.FindGameObjectWithTag("Hearts").transform;
+
+        for (int i = 0; i < 3; i++)
+        {
+            _hearts[i] = _livePanel.GetChild(i).gameObject;
+        }
+            _enemyCont = GameObject.FindGameObjectWithTag("EnemyController").GetComponent<EnemyController>();
         _standing = true;
         _life = 3;
         _pointer.SetActive(false);
@@ -59,6 +68,8 @@ public class PlayerBehaviour : MonoBehaviour {
     {
         if (_nextEnemy != null)
         {
+
+
             //add Attack Animation
             float tmpX = _nextEnemy.transform.position.x - this.transform.position.x;
             float tmpY = _nextEnemy.transform.position.y - this.transform.position.y;
@@ -66,8 +77,8 @@ public class PlayerBehaviour : MonoBehaviour {
             Debug.Log("TmpX: " + tmpX);
             if (Mathf.Abs(tmpX) < Mathf.Abs(tmpY))
             {
-                
-                if(tmpY < 0)
+
+                if (tmpY < 0)
                 {
                     animator.SetTrigger("AttackDown");
                 }
@@ -87,9 +98,13 @@ public class PlayerBehaviour : MonoBehaviour {
                     animator.SetTrigger("AttackRight");
                 }
             }
-            
+
             _nextEnemy.Die();
             _nextEnemy = null;
+        }
+        else
+        {
+            animator.SetTrigger("Attack");
         }
 
     }
@@ -112,6 +127,7 @@ public class PlayerBehaviour : MonoBehaviour {
     public void TakeDamage(int damage)
     {
         _life -= damage;
+        _hearts[_life].SetActive(false);
         Debug.Log("Remaining Lifes: " + _life);// switch with GUI
         if (_life > 0)
         {
