@@ -8,7 +8,8 @@ public class startGame : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-        GetComponent<Button>().onClick.AddListener(() => GameModel.Instance.LoadLevel(1));
+        //6 is for story scene
+        GetComponent<Button>().onClick.AddListener(() => GameModel.Instance.LoadLevel(6));
     }
 	
 	// Update is called once per frame
@@ -18,7 +19,7 @@ public class startGame : MonoBehaviour {
 
     void Destroy()
     {
-        GetComponent<Button>().onClick.RemoveListener(() => GameModel.Instance.LoadLevel(1));
+        GetComponent<Button>().onClick.RemoveListener(() => GameModel.Instance.LoadLevel(6));
     }
 }
 
