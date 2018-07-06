@@ -25,13 +25,24 @@ public class SoundManager : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
+    IEnumerator BGMStart()
+    {
+        for (int i = 100; i > 0; i--)
+        {
+            BGM.volume += 0.008f;
+            yield return new WaitForSeconds(0.03f);
+        }
+    }
     public void PlayBGM(int sel)
     {
+        BGM.volume = 0.2f;
+
         if (sel < BGMClips.Count)
         {
             StopBGM();
             BGM.clip = BGMClips[sel];
             BGM.Play();
+            StartCoroutine(BGMStart());
         }
         else
             Debug.LogError("BGM selection too high!");
