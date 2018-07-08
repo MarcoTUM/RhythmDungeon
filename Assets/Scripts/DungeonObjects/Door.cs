@@ -5,6 +5,10 @@ using UnityEngine;
 public class Door : MonoBehaviour {
 
     public Sprite OpenDoor;
+
+    //sorry fuer das unschoene hardcoden...
+    public Animator freeableCharacter;
+
     public void Open()
     {
         this.tag = "DoorOpen";
@@ -15,6 +19,11 @@ public class Door : MonoBehaviour {
     {
         if (col.tag.Equals("Player"))
         {
+            if (freeableCharacter)
+            {
+                freeableCharacter.SetTrigger("Freed");
+            }
+
             Destroy(this.gameObject);
         }
     }
