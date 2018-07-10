@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.UIElements;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerBehaviour : MonoBehaviour {
@@ -127,7 +128,8 @@ public class PlayerBehaviour : MonoBehaviour {
     public void TakeDamage(int damage)
     {
         _life -= damage;
-        _hearts[_life].SetActive(false);
+        if(_life > -1)
+            _hearts[_life].SetActive(false);
         Debug.Log("Remaining Lifes: " + _life);// switch with GUI
         if (_life > 0)
         {
@@ -261,6 +263,6 @@ public class PlayerBehaviour : MonoBehaviour {
 
     private void Cheat()
     {
-        transform.position = new Vector3(transform.position.x + CheatRight, transform.position.y + CheatUp, transform.position.z);
+        SceneManager.LoadScene("MainMenu");
     }
 }
